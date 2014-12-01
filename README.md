@@ -1,6 +1,6 @@
-jep-java-gpl
+Jep Java GPL
 ============
-The offical copy of the Jep - Java Expression Parser GPL release v. 2.4.1.
+The offical Jep - Java Expression Parser GPL release v. 2.4.1.
 
 This project was originally started on Sourceforge and has moved to github to allow easier forking.
 
