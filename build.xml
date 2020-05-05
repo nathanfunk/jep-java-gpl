@@ -102,7 +102,7 @@
 <!--======================================================================-->
 <!-- JJTREE -->
 	<target name="jjtree" depends="init" if="env.JAVACCHOME">
-		<echo message="javacc.present is true"/>-->
+		<echo message="javacc.present is true"/>
 		<jjtree
 			target="${src}/org/nfunk/jep/Parser.jjt"
 			outputdirectory="${src}/org/nfunk/jep/"
