@@ -113,7 +113,7 @@
 <!--======================================================================-->
 <!-- JAVACC -->
 	<target name="javacc" depends="jjtree" if="env.JAVACCHOME">
-		<echo message="javacc.present is true"/>-->
+		<echo message="javacc.present is true"/>
 		<javacc
 			target="${src}/org/nfunk/jep/Parser.jj"
 			outputdirectory="${src}/org/nfunk/jep/"
