@@ -1,8 +1,6 @@
 
 
 == Phone call =======================================================
-  - pricing probably down to $500 for JEP license
-    DJEP $150 and $100
 
   - new name for DJEP
     using "JEP Extensions" unless ideas come up within the next days
