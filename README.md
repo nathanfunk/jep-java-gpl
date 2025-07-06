@@ -1,6 +1,6 @@
 Jep Java GPL
 ============
-The offical Jep - Java Expression Parser GPL release v. 2.4.1.
+The offical Jep - Java Expression Parser GPL release
 
 View the documentation - http://htmlpreview.github.io/?https://github.com/nathanfunk/jep-java-gpl/blob/master/doc/html/index.html
 
