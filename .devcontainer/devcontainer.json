@@ -25,7 +25,6 @@
 	// "postCreateCommand": "java -version",
 
 	// Configure tool-specific properties.
-// Configure tool-specific properties.
 	"customizations": {
     // Configure properties specific to VS Code.
     "vscode": {
