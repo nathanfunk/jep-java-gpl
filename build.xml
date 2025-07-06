@@ -157,8 +157,8 @@
 		       destdir="${build}"
 		       classpath="${classpath}"
 			   deprecation="on"
-		       source="1.2"
-			   target="1.2"/>
+		       source="17"
+			   target="17"/>
 	</target>
 	
 	<!-- Compiles with ensuring compatibility if JRE1_2HOME is set -->
