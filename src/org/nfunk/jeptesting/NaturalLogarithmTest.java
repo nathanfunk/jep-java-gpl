@@ -19,7 +19,7 @@ public class NaturalLogarithmTest extends TestCase {
 	public void testNaturalLogarithm() {
 		NaturalLogarithm logFunction = new NaturalLogarithm();
 		java.util.Stack stack = new java.util.Stack();
-		stack.push(new Double(Double.NaN));
+		stack.push(Double.valueOf(Double.NaN));
 		try {
 			logFunction.run(stack);
 		} catch (ParseException e) {

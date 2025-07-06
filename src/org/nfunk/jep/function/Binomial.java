@@ -81,7 +81,7 @@ public class Binomial extends PostfixMathCommand
 		
 		expand(nInt);
 		int res = coeffs[nInt][iInt];
-		s.push(new Integer(res));
+		s.push(Integer.valueOf(res));
 	}
 	/** Returns the binomial coefficients.
 	 * 

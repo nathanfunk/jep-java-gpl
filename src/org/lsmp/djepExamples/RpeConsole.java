@@ -30,7 +30,7 @@ public class RpeConsole extends Console {
 	public void processEquation(Node node) throws ParseException {
 		RpCommandList list = rpe.compile(node);
 		double val = rpe.evaluate(list);
-		println(new Double(val));
+		println(Double.valueOf(val));
 	}
 
 	public String getPrompt() {

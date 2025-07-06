@@ -38,7 +38,7 @@ public class MinArg extends SumType {
 			Object minArg=null;
 			for(i=0,val=min;val<=max;++i,val=min+i*inc)
 			{
-				Object curArg = new Double(val); 
+				Object curArg = Double.valueOf(val); 
 				var.setValue(curArg);
 				
 				Object res = pv.eval(node);

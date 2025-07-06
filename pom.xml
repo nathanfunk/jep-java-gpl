@@ -25,12 +25,17 @@
     <artifactId>junit</artifactId>
     <version>4.13.2</version>
   </dependency>
+
+  <dependency>
+    <groupId>gov.nist.math</groupId>
+    <artifactId>jama</artifactId>
+    <version>1.0.3</version>
+  </dependency>
  </dependencies>
 
 
 <properties>
-    <maven.compiler.source>17</maven.compiler.source>
-    <maven.compiler.target>17</maven.compiler.target>
+    <maven.compiler.release>17</maven.compiler.release>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 </properties>
@@ -45,7 +50,7 @@
             </resources>
             <testResources>
                 <testResource>
-                    <directory>${project.basedir}/src</directory>
+                    <directory>${project.basedir}/src/org/nfunk/jeptesting</directory>
                 </testResource>
             </testResources>
   </build>

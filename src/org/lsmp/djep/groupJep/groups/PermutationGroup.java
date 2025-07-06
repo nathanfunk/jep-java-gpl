@@ -24,7 +24,7 @@ public class PermutationGroup extends Group implements GroupI , HasListI {
 	{
 		Integer perm[] = new Integer[n];
 		for(int i=0;i<n;++i)
-			perm[i]=new Integer(i+1);
+			perm[i]=Integer.valueOf(i+1);
 		zeroPerm = new Permutation(this,perm);
 	}
 
@@ -56,7 +56,7 @@ public class PermutationGroup extends Group implements GroupI , HasListI {
 		
 		Integer perm[] = new Integer[eles.length];
 		for(int i=0;i<eles.length;++i)
-			perm[i]=new Integer(eles[i].intValue());
+			perm[i]=Integer.valueOf(eles[i].intValue());
 		Permutation res = new Permutation(this,perm);
 		return res;
 	}

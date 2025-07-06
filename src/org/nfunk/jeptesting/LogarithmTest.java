@@ -19,7 +19,7 @@ public class LogarithmTest extends TestCase {
 	public void testLogarithm() {
 		Logarithm logFunction = new Logarithm();
 		java.util.Stack stack = new java.util.Stack();
-		stack.push(new Double(Double.NaN));
+		stack.push(Double.valueOf(Double.NaN));
 		try {
 			logFunction.run(stack);
 		} catch (ParseException e) {

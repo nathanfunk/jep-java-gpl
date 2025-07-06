@@ -46,7 +46,7 @@ public class ArcTanH extends PostfixMathCommand
 			double val = ((Number)param).doubleValue();
 			if(val > -1.0 && val < 1) {
 				double res = Math.log((1+val)/(1-val))/2;
-				return new Double(res);
+				return Double.valueOf(res);
 			}
 			else
 			{

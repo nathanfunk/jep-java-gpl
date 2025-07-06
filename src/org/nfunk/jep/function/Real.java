@@ -30,7 +30,7 @@ public class Real extends PostfixMathCommand
 	
 	public Number re(Object param) throws ParseException {
 		if (param instanceof Complex)
-			return new Double(((Complex)param).re());
+			return Double.valueOf(((Complex)param).re());
 		else if (param instanceof Number)
 			return ((Number)param);
 

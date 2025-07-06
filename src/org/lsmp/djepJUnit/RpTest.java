@@ -67,7 +67,7 @@ public class RpTest extends TestCase {
 
 	public void valueTest(String expr,double dub) throws ParseException,Exception
 	{
-		valueTest(expr,new Double(dub));
+		valueTest(expr,Double.valueOf(dub));
 	}
 	public void valueTest(String expr,Object expected) throws ParseException,Exception
 	{
@@ -167,7 +167,7 @@ public class RpTest extends TestCase {
 			fail("Evaluation Failure: "+eqn2+j.getErrorInfo());
 		myAssertEquals("<"+eqn2+">",""+rpRes,matRes.toString());
 
-		if(!matRes.equals(new Double(rpRes)))
+		if(!matRes.equals(Double.valueOf(rpRes)))
 			fail("Expected <"+matRes+"> found <"+rpRes+">");
 	}
 
@@ -186,7 +186,7 @@ public class RpTest extends TestCase {
 		}
 		for(int i=0;i<eqns.length;++i)	{
 			Object matRes = j.evaluate(nodes[i]);
-			if(!matRes.equals(new Double(rpRes[i])))
+			if(!matRes.equals(Double.valueOf(rpRes[i])))
 					fail("Expected <"+matRes+"> found <"+rpRes[i]+">");
 		}
 		rpe.cleanUp();
@@ -204,7 +204,7 @@ public class RpTest extends TestCase {
 	public void testAssign() throws ParseException,Exception
 	{
 		rpTest2(new String[]{"x=5","x+x"});
-		j.setVarValue("x",new Double(6.0));
+		j.setVarValue("x",Double.valueOf(6.0));
 		rpTest2(new String[]{"x+x"});
 	}
 	

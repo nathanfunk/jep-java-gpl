@@ -19,7 +19,7 @@ import org.nfunk.jep.type.*;
  */
 public class Arg extends PostfixMathCommand
 {
-	private static final Double ONE = new Double(1.0);
+	private static final Double ONE = Double.valueOf(1.0);
 	public Arg()
 	{
 		numberOfParameters = 1;
@@ -36,7 +36,7 @@ public class Arg extends PostfixMathCommand
 	
 	public Number arg(Object param) throws ParseException {
 		if (param instanceof Complex) {
-					return new Double(((Complex)param).arg());
+					return Double.valueOf(((Complex)param).arg());
 				}
 		else if (param instanceof Number) {
 			return (ONE);

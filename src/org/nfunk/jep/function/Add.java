@@ -87,7 +87,7 @@ public class Add extends PostfixMathCommand
 	}
 	
 	public Double add(Number d1, Number d2) {
-		return new Double(d1.doubleValue() + d2.doubleValue());
+		return Double.valueOf(d1.doubleValue() + d2.doubleValue());
 	}
 	
 	public Complex add(Complex c1, Complex c2) {

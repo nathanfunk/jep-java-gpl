@@ -64,7 +64,7 @@ public class RpSpeed {
 		{
 			vars[i] = j.getVar(varNames[i]);
 			for(int j=0;j<num_vals;++j)
-				varVals[i][j] = new Double(generator.nextDouble());
+				varVals[i][j] = Double.valueOf(generator.nextDouble());
 		}
 	
 		long tj = doJep(eqn,vars,varVals);
@@ -141,7 +141,7 @@ public class RpSpeed {
 		Double varVals[] = new Double[num_vals];
 		Random generator = new Random(seed);
 		for(int j=0;j<num_vals;++j)
-			varVals[j] = new Double(generator.nextDouble());
+			varVals[j] = Double.valueOf(generator.nextDouble());
 		
 		long t1 = System.currentTimeMillis();
 		double x; 
@@ -162,7 +162,7 @@ public class RpSpeed {
 		Double varVals[] = new Double[num_vals];
 		Random generator = new Random(seed);
 		for(int j=0;j<num_vals;++j)
-			varVals[j] = new Double(generator.nextDouble());
+			varVals[j] = Double.valueOf(generator.nextDouble());
 		
 		long t1 = System.currentTimeMillis();
 		double x; 

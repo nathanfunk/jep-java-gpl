@@ -163,10 +163,10 @@ public class MRpSurfExample {
 		yVar.setValidValue(true);
 		for(int i=0;i<=xsteps;++i) {
 			double x = xmin + ((xmax - xmin)*i)/xsteps;
-			xVal.setEle(0,new Double(x));
+			xVal.setEle(0,Double.valueOf(x));
 			for(int j=0;j<=ysteps;++j) {
 				double y = ymin + ((ymax - ymin)*j)/ysteps;
-				yVal.setEle(0,new Double(y));
+				yVal.setEle(0,Double.valueOf(y));
 
 				Object res=null;
 				for(int k=0;k<allEqns.length;++k)
@@ -183,10 +183,10 @@ public class MRpSurfExample {
 		Object topRes[]=null;
 		for(int i=0;i<=xsteps;++i) {
 			double x = xmin + ((xmax - xmin)*i)/xsteps;
-			xVVar.setValue(new Double(x));
+			xVVar.setValue(Double.valueOf(x));
 			for(int j=0;j<=ysteps;++j) {
 				double y = ymin + ((ymax - ymin)*j)/ysteps;
-				yVVar.setValue(new Double(y));
+				yVVar.setValue(Double.valueOf(y));
 
 				Object res=null;
 				for(int k=0;k<vecEqns.length;++k)

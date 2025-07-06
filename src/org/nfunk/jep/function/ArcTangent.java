@@ -38,7 +38,7 @@ public class ArcTangent extends PostfixMathCommand
 		}
 		else if (param instanceof Number)
 		{
-			return new Double(Math.atan(((Number)param).doubleValue()));
+			return Double.valueOf(Math.atan(((Number)param).doubleValue()));
 		}
 
 		throw new ParseException("Invalid parameter type");

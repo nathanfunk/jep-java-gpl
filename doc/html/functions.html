@@ -350,7 +350,7 @@
 
    <font color="#999999">// check whether the argument is of the right type</font><br>   if (param instanceof Double) {
       <font color="#999999">// calculate the result</font><br>      double r = ((Double)param).doubleValue() / 2;
-      <font color="#999999">// push the result on the inStack</font><br>      inStack.push(new Double(r)); <br>   } else {<br>      throw new ParseException(&quot;Invalid parameter type&quot;);
+      <font color="#999999">// push the result on the inStack</font><br>      inStack.push(Double.valueOf(r)); <br>   } else {<br>      throw new ParseException(&quot;Invalid parameter type&quot;);
    }
 }</pre>
     </li>

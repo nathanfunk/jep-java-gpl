@@ -36,7 +36,7 @@ public class Rank extends PostfixMathCommand implements UnaryOperatorI
 			throw new ParseException("inverse: can only be applied to a matrix");
 		Jama.Matrix m = JamaUtil.toJama((Matrix) o);
 		int rank = m.rank();
-		s.push(new Integer(rank));
+		s.push(Integer.valueOf(rank));
 	}
 
 	public Dimensions calcDim(Dimensions ldim)
@@ -53,7 +53,7 @@ public class Rank extends PostfixMathCommand implements UnaryOperatorI
 			throw new ParseException("inverse: result should be a matrix");
 		Jama.Matrix m = JamaUtil.toJama((Matrix) lhs);
 		int rank = m.rank();
-		res.setEle(0,new Integer(rank));
+		res.setEle(0,Integer.valueOf(rank));
 		return res;
 	}
 

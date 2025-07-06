@@ -194,12 +194,12 @@ System.out.println(j.toString(n1));
     will be brought up-to-date.&nbsp; It is important that this is carried out 
     in the correct order, so that the equation setting the value of a variable 
     is evaluated before equations which rely on this equation. </p>
-  <pre>XJep j = new XJep();<br>...<br>// Setting up equations x=3; y=x^2; z=y+x; <br>Node node1 = j.preprocess(j.parse("x=3"));<br>System.out.println(j.evaluate(node1)); // prints 3<br>Node node2 = j.preprocess(j.parse("y=x^2"));<br>System.out.println(j.evaluate(node2)); // prints 9<br>Node node3 = j.simplify(j.preprocess(j.parse("z=y+x")));<br>System.out.println(j.evaluate(node3)); // prints 12<br><br>// Change value of x, evaluate equations in turn<br>j.setVarValue("x",new Double(4));<br>System.out.println(j.evaluate(node2)); // prints 16<br>System.out.println(j.evaluate(node3)); // prints 20<br>System.out.println("z: "+j.getVarValue("z").toString()); // prints 20<br></pre>
+  <pre>XJep j = new XJep();<br>...<br>// Setting up equations x=3; y=x^2; z=y+x; <br>Node node1 = j.preprocess(j.parse("x=3"));<br>System.out.println(j.evaluate(node1)); // prints 3<br>Node node2 = j.preprocess(j.parse("y=x^2"));<br>System.out.println(j.evaluate(node2)); // prints 9<br>Node node3 = j.simplify(j.preprocess(j.parse("z=y+x")));<br>System.out.println(j.evaluate(node3)); // prints 12<br><br>// Change value of x, evaluate equations in turn<br>j.setVarValue("x",Double.valueOf(4));<br>System.out.println(j.evaluate(node2)); // prints 16<br>System.out.println(j.evaluate(node3)); // prints 20<br>System.out.println("z: "+j.getVarValue("z").toString()); // prints 20<br></pre>
   <p><b>Calculating variable values from their equations: </b>The <a href="../../javadoc/org/lsmp/djep/xjep/XJep.html#calcVarValue(java.lang.String)">calcVarValue</a> 
     method re-calculate the value of variables using it's equation. Note that 
     is important that the preprocess call is used to set the equations for the 
     variables. The values of the variables should be calculated in order. </p>
-  <pre>j.setVarValue("x",new Double(5));<br>System.out.println(j.calcVarValue("y").toString()); // prints 25<br>System.out.println(j.calcVarValue("z").toString()); // prints 30<br></pre>
+  <pre>j.setVarValue("x",Double.valueOf(5));<br>System.out.println(j.calcVarValue("y").toString()); // prints 25<br>System.out.println(j.calcVarValue("z").toString()); // prints 30<br></pre>
   <p><b>Lazy evaluation:</b> A lazy evaluation strategy is used by the evaluator 
     to calculate the values of variables. Each variable has a flag to specify 
     whether its value is up-to date or <i>valid</i>. If if is valid then the current 
@@ -220,7 +220,7 @@ System.out.println(j.toString(n1));
     need to evaluate intermediate equations, just the final variable or equation 
     needs to be calculated. <br>
   </p>
-  <pre>j.getSymbolTable().clearValues();<br>j.setVarValue("x",new Double(6));<br>System.out.println(j.findVarValue("z").toString()); // prints 42<br><br>j.getSymbolTable().clearValues();<br>j.setVarValue("x",new Double(7));<br>System.out.println(j.evaluate(node3));<br><br></pre>
+  <pre>j.getSymbolTable().clearValues();<br>j.setVarValue("x",Double.valueOf(6));<br>System.out.println(j.findVarValue("z").toString()); // prints 42<br><br>j.getSymbolTable().clearValues();<br>j.setVarValue("x",Double.valueOf(7));<br>System.out.println(j.evaluate(node3));<br><br></pre>
   <p>The motivation behind this scheme comes into play if differentiation when 
     partial derivatives of variables are automatically calculated.<br>
   </p>

@@ -34,7 +34,7 @@ public class Permutation extends Number {
 	public Permutation getInverse() {
 		Integer res[] = new Integer[len];
 		for(int i=0;i<len;++i)
-			res[this.perm[i].intValue()-1]= new Integer(i+1);
+			res[this.perm[i].intValue()-1]= Integer.valueOf(i+1);
 		return valueOf(res);
 	}
 	

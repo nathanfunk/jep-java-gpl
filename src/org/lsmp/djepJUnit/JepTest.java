@@ -134,7 +134,7 @@ public class JepTest extends TestCase {
 	 */
 	public void valueTestInt(String expr,int a) throws Exception
 	{
-		valueTest(expr,new Integer(a));
+		valueTest(expr,Integer.valueOf(a));
 	}
 	
 	/** Test parse and evaluate with with a Double result.
@@ -145,7 +145,7 @@ public class JepTest extends TestCase {
 	 */
 	public void valueTest(String expr,double a) throws Exception
 	{
-		valueTest(expr,new Double(a));
+		valueTest(expr,Double.valueOf(a));
 	}
 
 	public void valueTest(String expr,double a,double tol) throws Exception
@@ -190,8 +190,8 @@ public class JepTest extends TestCase {
 	/** just test JUnit working OK */
 	public void testGood()
 	{
-		myAssertEquals("1",new Double(1),new Double(1));
-		myAssertNaN("NaN",new Double(Double.NaN));
+		myAssertEquals("1",Double.valueOf(1),Double.valueOf(1));
+		myAssertNaN("NaN",Double.valueOf(Double.NaN));
 	}
 
 	public void testSimpleSum() throws Exception
@@ -249,8 +249,8 @@ public class JepTest extends TestCase {
 		valueTest("(a&&(b||c)) == ((a&&b)||(a&&c))",1);
 		valueTest("(a||(b&&c)) == ((a||b)&&(a||c))",1);
 		
-		j.addVariable("true",new Boolean(true));
-		j.addVariable("false",new Boolean(false));
+		j.addVariable("true",Boolean.valueOf(true));
+		j.addVariable("false",Boolean.valueOf(false));
 		valueTest("true==true",1);
 		valueTest("false==false",1);
 		valueTest("true==false",0);
@@ -386,7 +386,7 @@ public class JepTest extends TestCase {
 	public void testNaN() throws Exception
 	{
 		System.out.println("\nTesting for NaN");
-		j.addVariable("x",new Double(Double.NaN));
+		j.addVariable("x",Double.valueOf(Double.NaN));
 		System.out.println("x=NaN");
 		valueTestNaN("ln(x)");
 		valueTestNaN("log(x)");
@@ -395,7 +395,7 @@ public class JepTest extends TestCase {
 		valueTest("x!=x",1);
 		valueTest("x==x",0);
 
-		j.addVariable("y",new Double(Double.NaN));
+		j.addVariable("y",Double.valueOf(Double.NaN));
 		Node n = j.parse("x+5");
 		System.out.println(calcValue(n));
 		Node n2 = j.parse("y");
@@ -408,7 +408,7 @@ public class JepTest extends TestCase {
 		valueTest("x == y",0);
 		valueTest("y == y",0);
 		System.out.println("Set x to Double(5)");
-		j.setVarValue("x",new Double(5));
+		j.setVarValue("x",Double.valueOf(5));
 		valueTest("x == x+5",0);
 		valueTest("x == x",1);
 	}
@@ -527,7 +527,7 @@ a3 = if(a1 > 0 && ApportionmentAmt < 1000,
 	        System.out.println("Error caught: "+e.getMessage());
 	    }
 	    try {
-	        j.setVarValue("foo",new Double(5.0));
+	        j.setVarValue("foo",Double.valueOf(5.0));
 	        fail("Should have found a null pointer exception");
 	    } catch(NullPointerException e) {
 	        System.out.println("Expected error caught: "+e.getClass().getName()+": "+e.getMessage());

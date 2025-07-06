@@ -113,7 +113,7 @@ public abstract class SumType extends PostfixMathCommand implements CallbackEval
 			Object[] res=new Object[(int) ((max-min)/inc)+1];	
 			for(i=0,val=min;val<=max;++i,val=min+i*inc)
 			{
-				var.setValue(new Double(val));
+				var.setValue(Double.valueOf(val));
 				
 				res[i] = pv.eval(node);
 			}

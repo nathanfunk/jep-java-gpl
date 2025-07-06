@@ -21,10 +21,10 @@ public class Trapezium extends SumType {
 
 	static Add add = new Add();
 	static Multiply mul = new Multiply();
-	static Double HALF = new Double(1.0/2);
-	static Double THIRD = new Double(1.0/3);
-	static Double TWO = new Double(2);
-	static Double FOUR = new Double(4);
+	static Double HALF = Double.valueOf(1.0/2);
+	static Double THIRD = Double.valueOf(1.0/3);
+	static Double TWO = Double.valueOf(2);
+	static Double FOUR = Double.valueOf(4);
 	
 	public Trapezium()
 	{
@@ -59,12 +59,12 @@ public class Trapezium extends SumType {
 				Object[] res=new Object[(int) ((max-min)/inc)+1];	
 				for(i=0,val=min;val<=max;++i,val=min+i*inc)
 				{
-					var.setValue(new Double(val));
+					var.setValue(Double.valueOf(val));
 					
 					res[i] = pv.eval(node);
 				}
 				Object ret = evaluate(res);
-				return mul.mul(ret,new Double(inc));
+				return mul.mul(ret,Double.valueOf(inc));
 		}
 
 }

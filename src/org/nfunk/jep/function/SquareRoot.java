@@ -47,7 +47,7 @@ public class SquareRoot extends PostfixMathCommand
 			if (value < 0.0) {
 				return (new Complex(value).sqrt());
 			} else {
-				return new Double(Math.sqrt(value));
+				return Double.valueOf(Math.sqrt(value));
 			}
 		}
 

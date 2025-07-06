@@ -47,8 +47,8 @@ public class AssignmentExample {
 			
 			// getting and setting variable values
 			Node node3 = j.parse("z=x^y");
-			j.setVarValue("x",new Double(2));
-			j.setVarValue("y",new Double(3));
+			j.setVarValue("x",Double.valueOf(2));
+			j.setVarValue("y",Double.valueOf(3));
 			j.evaluate(node3);
 			System.out.println(j.getVarValue("z")); // prints 8
 		}

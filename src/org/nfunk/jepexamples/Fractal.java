@@ -109,7 +109,7 @@ public class Fractal extends Applet implements ActionListener {
 	}
 
 	private void itFieldTextValueChanged (java.awt.event.TextEvent evt) {
-		Integer newIterationsValue = new Integer(itField.getText());
+		Integer newIterationsValue = Integer.valueOf(itField.getText());
 		complexCanvas.setIterations(newIterationsValue.intValue());
 		//complexCanvas.repaint();
 	}

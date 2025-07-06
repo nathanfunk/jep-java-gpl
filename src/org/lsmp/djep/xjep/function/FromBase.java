@@ -83,7 +83,7 @@ public class FromBase extends PostfixMathCommand {
         if(ind==-1) {
             double val = Long.parseLong(str,base);
             if(sign) val = -val;
-            return new Double(val);
+            return Double.valueOf(val);
         }
         String intpart = str.substring(0,ind);
         String fractpart = str.substring(ind+1);
@@ -91,6 +91,6 @@ public class FromBase extends PostfixMathCommand {
         double fractlong = Long.parseLong(fractpart,base);
         double val = intlong + fractlong / Math.pow(base,fractpart.length());
         if(sign) val = -val;
-        return new Double(val);
+        return Double.valueOf(val);
     }
 }

@@ -39,7 +39,7 @@ public class MatrixVariable extends DVariable implements MatrixVariableI {
 	{ 
 		super(name);
 		this.dims = Dimensions.ONE;
-		this.mvalue = Scaler.getInstance(new Double(0.0));
+		this.mvalue = Scaler.getInstance(Double.valueOf(0.0));
 		setValidValue(false);
 	}
 
@@ -47,7 +47,7 @@ public class MatrixVariable extends DVariable implements MatrixVariableI {
 	{ 
 		super(name);
 		if(value == null)
-			this.mvalue = Scaler.getInstance(new Double(0.0));
+			this.mvalue = Scaler.getInstance(Double.valueOf(0.0));
 		else if(value instanceof MatrixValueI)
 			this.mvalue = (MatrixValueI) value;
 		else

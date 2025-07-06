@@ -32,7 +32,7 @@ class Half extends PostfixMathCommand {
 			// calculate the result
 			double r = ((Double)param).doubleValue() / 2;
 			// push the result on the inStack
-			inStack.push(new Double(r));
+			inStack.push(Double.valueOf(r));
 		} else {
 			throw new ParseException("Invalid parameter type");
 		}

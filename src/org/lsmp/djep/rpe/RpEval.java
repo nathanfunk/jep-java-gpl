@@ -153,31 +153,31 @@ public final class RpEval implements ParserVisitor {
 	
 	private static final Hashtable functionHash = new Hashtable();
 	{
-		functionHash.put("sin",new Short(SIN));
-		functionHash.put("cos",new Short(COS));
-		functionHash.put("tan",new Short(TAN));
-		functionHash.put("asin",new Short(ASIN));
-		functionHash.put("acos",new Short(ACOS));
-		functionHash.put("atan",new Short(ATAN));
-		functionHash.put("sinh",new Short(SINH));
-		functionHash.put("cosh",new Short(COSH));
-		functionHash.put("tanh",new Short(TANH));
-		functionHash.put("asinh",new Short(ASINH));
-		functionHash.put("acosh",new Short(ACOSH));
-		functionHash.put("atanh",new Short(ATANH));
+		functionHash.put("sin",Short.valueOf(SIN));
+		functionHash.put("cos",Short.valueOf(COS));
+		functionHash.put("tan",Short.valueOf(TAN));
+		functionHash.put("asin",Short.valueOf(ASIN));
+		functionHash.put("acos",Short.valueOf(ACOS));
+		functionHash.put("atan",Short.valueOf(ATAN));
+		functionHash.put("sinh",Short.valueOf(SINH));
+		functionHash.put("cosh",Short.valueOf(COSH));
+		functionHash.put("tanh",Short.valueOf(TANH));
+		functionHash.put("asinh",Short.valueOf(ASINH));
+		functionHash.put("acosh",Short.valueOf(ACOSH));
+		functionHash.put("atanh",Short.valueOf(ATANH));
 
-		functionHash.put("abs",new Short(ABS));
-		functionHash.put("exp",new Short(EXP));
-		functionHash.put("log",new Short(LOG));
-		functionHash.put("ln",new Short(LN));
-		functionHash.put("sqrt",new Short(SQRT));
+		functionHash.put("abs",Short.valueOf(ABS));
+		functionHash.put("exp",Short.valueOf(EXP));
+		functionHash.put("log",Short.valueOf(LOG));
+		functionHash.put("ln",Short.valueOf(LN));
+		functionHash.put("sqrt",Short.valueOf(SQRT));
 
-		functionHash.put("sec",new Short(SEC));
-		functionHash.put("cosec",new Short(COSEC));
-		functionHash.put("cot",new Short(COT));
+		functionHash.put("sec",Short.valueOf(SEC));
+		functionHash.put("cosec",Short.valueOf(COSEC));
+		functionHash.put("cot",Short.valueOf(COT));
 		
-		functionHash.put("atan2",new Short(ATAN2));
-		functionHash.put("if",new Short(IF));
+		functionHash.put("atan2",Short.valueOf(ATAN2));
+		functionHash.put("if",Short.valueOf(IF));
 	}
 
 	
@@ -213,7 +213,7 @@ public final class RpEval implements ParserVisitor {
 			{
 				int size = varRefs.size();
 				expandVarArray(size+1);
-				varRefs.put(var,new Integer(size));
+				varRefs.put(var,Integer.valueOf(size));
 				copyFromVar(var,size);
 				var.addObserver(this);
 				return size;

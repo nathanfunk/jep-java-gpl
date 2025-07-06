@@ -72,7 +72,7 @@ public class CollectPowers extends AbstractRewrite {
 					return nf.buildOperatorNode(
 						opSet.getPower(),
 						children[0],
-						nf.buildConstantNode(new Double(2.0))
+						nf.buildConstantNode(Double.valueOf(2.0))
 						);
 				}
 			}

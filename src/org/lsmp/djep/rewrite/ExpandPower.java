@@ -54,7 +54,7 @@ public class ExpandPower implements RewriteRuleI {
 		
 		if(lhsOp == opSet.getAdd() || lhsOp == opSet.getSubtract())
 		{ /* (a+b)^n --> (a^n+nC1 a^(n-1) b + ....) */
-			if(n == 0) return nf.buildConstantNode(new Double(1));
+			if(n == 0) return nf.buildConstantNode(Double.valueOf(1));
 			if(n == 1) return children[0];
 			
 			Node vals[] = new Node[n+1];
@@ -62,13 +62,13 @@ public class ExpandPower implements RewriteRuleI {
 			vals[0] = nf.buildOperatorNode(
 				opSet.getPower(),
 				xj.deepCopy(sub1),
-				nf.buildConstantNode(new Double(n))
+				nf.buildConstantNode(Double.valueOf(n))
 				);
 			if(n==2)
 			{
 				vals[1]=nf.buildOperatorNode(
 					opSet.getMultiply(),
-					nf.buildConstantNode(new Double(2)),
+					nf.buildConstantNode(Double.valueOf(2)),
 					nf.buildOperatorNode(
 						opSet.getMultiply(),
 						xj.deepCopy(sub1),
@@ -79,13 +79,13 @@ public class ExpandPower implements RewriteRuleI {
 				/* n * a^(n-1) * b */
 				vals[1]=nf.buildOperatorNode(
 					opSet.getMultiply(),
-					nf.buildConstantNode(new Double(n)),
+					nf.buildConstantNode(Double.valueOf(n)),
 					nf.buildOperatorNode(
 						opSet.getMultiply(),
 						nf.buildOperatorNode(
 							opSet.getPower(),
 							xj.deepCopy(sub1),
-							nf.buildConstantNode(new Double(n-1))),
+							nf.buildConstantNode(Double.valueOf(n-1))),
 						xj.deepCopy(sub2)));
 			}
 			/* n * a * b^(n-1) */
@@ -93,37 +93,37 @@ public class ExpandPower implements RewriteRuleI {
 			{
 				vals[n-1] = nf.buildOperatorNode(
 				opSet.getMultiply(),
-				nf.buildConstantNode(new Double(n)),
+				nf.buildConstantNode(Double.valueOf(n)),
 				nf.buildOperatorNode(
 					opSet.getMultiply(),
 					xj.deepCopy(sub1),
 					nf.buildOperatorNode(
 						opSet.getPower(),
 						xj.deepCopy(sub2),
-						nf.buildConstantNode(new Double(n-1)))));
+						nf.buildConstantNode(Double.valueOf(n-1)))));
 			}
 			/* a^n */
 			vals[n] = nf.buildOperatorNode(
 				opSet.getPower(),
 				xj.deepCopy(sub2),
-				nf.buildConstantNode(new Double(n))
+				nf.buildConstantNode(Double.valueOf(n))
 				);
 			for(int i=2;i<n-1;++i)
 			{
 				/* (n,i) * a^(n-i) * b^i */ 
 				vals[i]=nf.buildOperatorNode(
 					opSet.getMultiply(),
-					nf.buildConstantNode(new Double(XMath.binomial(n,i))),
+					nf.buildConstantNode(Double.valueOf(XMath.binomial(n,i))),
 					nf.buildOperatorNode(
 						opSet.getMultiply(),
 						nf.buildOperatorNode(
 							opSet.getPower(),
 							xj.deepCopy(sub1),
-							nf.buildConstantNode(new Double(n-i))),
+							nf.buildConstantNode(Double.valueOf(n-i))),
 						nf.buildOperatorNode(
 							opSet.getPower(),
 							xj.deepCopy(sub2),
-							nf.buildConstantNode(new Double(i)))));
+							nf.buildConstantNode(Double.valueOf(i)))));
 			}
 
 			Node sums[] = new Node[n+1];

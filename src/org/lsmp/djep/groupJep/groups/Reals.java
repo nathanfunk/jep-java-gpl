@@ -12,8 +12,8 @@ import org.lsmp.djep.groupJep.interfaces.*;
  */
 public class Reals extends Group implements FieldI,OrderedSetI,HasPowerI {
 
-	private Double ZERO = new Double(0.0);
-	private Double ONE = new Double(1.0);
+	private Double ZERO = Double.valueOf(0.0);
+	private Double ONE = Double.valueOf(1.0);
 
 	/**
 	 * Operations on the reals (Implemented as Doubles).  
@@ -30,35 +30,35 @@ public class Reals extends Group implements FieldI,OrderedSetI,HasPowerI {
 	}
 
 	public Number getInverse(Number num) {
-		return new Double(1.0/num.doubleValue());
+		return Double.valueOf(1.0/num.doubleValue());
 	}
 
 	public Number getMulInverse(Number num) {
-		return new Double(1.0 / num.doubleValue());
+		return Double.valueOf(1.0 / num.doubleValue());
 	}
 
 	public Number add(Number a, Number b) {
-		return new Double(a.doubleValue()+b.doubleValue());
+		return Double.valueOf(a.doubleValue()+b.doubleValue());
 	}
 
 	public Number sub(Number a, Number b) {
-		return new Double(a.doubleValue()-b.doubleValue());
+		return Double.valueOf(a.doubleValue()-b.doubleValue());
 	}
 
 	public Number mul(Number a, Number b) {
-		return new Double(a.doubleValue()*b.doubleValue());
+		return Double.valueOf(a.doubleValue()*b.doubleValue());
 	}
 
 	public Number div(Number a, Number b) {
-		return new Double(a.doubleValue()/b.doubleValue());
+		return Double.valueOf(a.doubleValue()/b.doubleValue());
 	}
 
 	public Number pow(Number a, Number b) {
-		return new Double(Math.pow(a.doubleValue(),b.doubleValue()));
+		return Double.valueOf(Math.pow(a.doubleValue(),b.doubleValue()));
 	}
 
 	public Number valueOf(String str) {
-		return new Double(str);
+		return Double.valueOf(str);
 	}
 
 	public boolean equals(Number a,Number b)	{

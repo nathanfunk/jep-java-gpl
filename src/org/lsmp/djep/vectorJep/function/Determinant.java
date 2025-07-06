@@ -123,7 +123,7 @@ public class Determinant extends PostfixMathCommand implements UnaryOperatorI
 				mul.mul(mat[0][0],mat[1][1]),
 				mul.mul(mat[1][0],mat[0][1]));
 		}
-		Object res = new Double(0.0);
+		Object res = Double.valueOf(0.0);
 		for(int i=0;i<mat.length;++i)
 		{
 			Object[][] m = dropRowCol(mat,0,i);

@@ -235,8 +235,8 @@ public class MRpSpeed {
 
 	static void doObjAdd()
 	{
-		Double mat1[][] = new Double[][]{{new Double(1.0),new Double(2.0),new Double(3.0)},{new Double(4.0),new Double(5.0),new Double(6.0)},{new Double(7.0),new Double(8.0),new Double(9.0)}};
-		Double mat2[][] = new Double[][]{{new Double(1.0),new Double(2.0),new Double(3.0)},{new Double(4.0),new Double(5.0),new Double(6.0)},{new Double(7.0),new Double(8.0),new Double(9.0)}};
+		Double mat1[][] = new Double[][]{{Double.valueOf(1.0),Double.valueOf(2.0),Double.valueOf(3.0)},{Double.valueOf(4.0),Double.valueOf(5.0),Double.valueOf(6.0)},{Double.valueOf(7.0),Double.valueOf(8.0),Double.valueOf(9.0)}};
+		Double mat2[][] = new Double[][]{{Double.valueOf(1.0),Double.valueOf(2.0),Double.valueOf(3.0)},{Double.valueOf(4.0),Double.valueOf(5.0),Double.valueOf(6.0)},{Double.valueOf(7.0),Double.valueOf(8.0),Double.valueOf(9.0)}};
 		Double mat3[][] = new Double[3][3];
 		
 		long t1 = System.currentTimeMillis();
@@ -244,7 +244,7 @@ public class MRpSpeed {
 		{
 			for(int row=0;row<3;++row)
 				for(int col=0;col<3;++col)
-					mat3[row][col] = new Double(mat1[row][col].doubleValue()+mat2[row][col].doubleValue());
+					mat3[row][col] = Double.valueOf(mat1[row][col].doubleValue()+mat2[row][col].doubleValue());
 		}
 		long t2 = System.currentTimeMillis();
 		System.out.println("ObjAdd:"+(t2-t1)+"\tTime to add two Double[3][3] arrays");
@@ -252,12 +252,12 @@ public class MRpSpeed {
 
 	static void doObjMult()
 	{
-		Double mat1[][] = new Double[][]{{new Double(1.0),new Double(2.0),new Double(3.0)},
-					{new Double(4.0),new Double(5.0),new Double(6.0)},
-					{new Double(7.0),new Double(8.0),new Double(9.0)}};
-		Double mat2[][] = new Double[][]{{new Double(1.0),new Double(2.0),new Double(3.0)},
-				{new Double(4.0),new Double(5.0),new Double(6.0)},
-				{new Double(7.0),new Double(8.0),new Double(9.0)}};
+		Double mat1[][] = new Double[][]{{Double.valueOf(1.0),Double.valueOf(2.0),Double.valueOf(3.0)},
+					{Double.valueOf(4.0),Double.valueOf(5.0),Double.valueOf(6.0)},
+					{Double.valueOf(7.0),Double.valueOf(8.0),Double.valueOf(9.0)}};
+		Double mat2[][] = new Double[][]{{Double.valueOf(1.0),Double.valueOf(2.0),Double.valueOf(3.0)},
+				{Double.valueOf(4.0),Double.valueOf(5.0),Double.valueOf(6.0)},
+				{Double.valueOf(7.0),Double.valueOf(8.0),Double.valueOf(9.0)}};
 		Double mat3[][] = new Double[3][3];
 		
 		long t1 = System.currentTimeMillis();
@@ -266,14 +266,14 @@ public class MRpSpeed {
 			for(int row=0;row<3;++row)
 				for(int col=0;col<3;++col)
 				{
-//					mat2[row][col] = new Double(mat1[row][0].doubleValue() * mat1[0][col].doubleValue());
+//					mat2[row][col] = Double.valueOf(mat1[row][0].doubleValue() * mat1[0][col].doubleValue());
 					double tmp = mat1[row][0].doubleValue() * mat2[0][col].doubleValue();
 					for(int j=1;j<3;++j)
-//						mat2[row][col] = new Double(mat2[row][col].doubleValue() + 
+//						mat2[row][col] = Double.valueOf(mat2[row][col].doubleValue() + 
 //							mat1[row][j].doubleValue() * mat1[j][col].doubleValue());
 						tmp +=  
 							mat1[row][j].doubleValue() * mat2[j][col].doubleValue();
-					mat3[row][col] = new Double(tmp);	
+					mat3[row][col] = Double.valueOf(tmp);	
 				}
 		}
 		long t2 = System.currentTimeMillis();

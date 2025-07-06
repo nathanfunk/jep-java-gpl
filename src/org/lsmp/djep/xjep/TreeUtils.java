@@ -21,11 +21,11 @@ public class TreeUtils {
 	/** Real zero. Note that this is a Double, if a different number
 	 * format is needed then this class should be sub-classed.
 	 */
-	protected static Double ZERO = new Double(0.0);
+	protected static Double ZERO = Double.valueOf(0.0);
 	/** Real One */
-	protected static Double ONE = new Double(1.0);
+	protected static Double ONE = Double.valueOf(1.0);
 	/** Real Minus One */
-	protected static Double MINUSONE = new Double(-1.0);
+	protected static Double MINUSONE = Double.valueOf(-1.0);
 	/** Complex Zero **/
 	protected static Complex CZERO = new Complex(0.0,0.0);
 	/** Complex One **/
@@ -37,11 +37,11 @@ public class TreeUtils {
 	/** Complex Minus i **/
 	protected static Complex CMINUSI = new Complex(0.0,-1.0);
 	/** Real NaN */
-	protected static Double NAN = new Double(Double.NaN);
+	protected static Double NAN = Double.valueOf(Double.NaN);
 	/** Real positive infinity */
-	protected static Double PosInf = new Double(Double.POSITIVE_INFINITY);
+	protected static Double PosInf = Double.valueOf(Double.POSITIVE_INFINITY);
 	/** Real NaN */
-	protected static Double NegInf = new Double(Double.NEGATIVE_INFINITY);
+	protected static Double NegInf = Double.valueOf(Double.NEGATIVE_INFINITY);
 	
 	/**
 	 * Default constructor.
@@ -352,5 +352,5 @@ public class TreeUtils {
 	public Object getNAN() { return NAN; }
 	public Object getPositiveInfinity() { return PosInf; }
 	public Object getNegativeInfinity() { return NegInf; }
-	public Object getNumber(double val) { return new Double(val); }
+	public Object getNumber(double val) { return Double.valueOf(val); }
 }

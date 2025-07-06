@@ -71,11 +71,11 @@ public class DiffExample {
 //			((DPrintVisitor)j.getPrintVisitor()).setPrintVariableEquations(true);
 //			j.println(node5);
 			
-			j.getSymbolTable().setVarValue("x",new Double(5));
+			j.getSymbolTable().setVarValue("x",Double.valueOf(5));
 			System.out.println(j.evaluate(simp3));
 			j.evaluate(node3);
 			System.out.println(j.getSymbolTable().getVar("y").getValue());
-			j.getSymbolTable().setVarValue("x",new Double(0));
+			j.getSymbolTable().setVarValue("x",Double.valueOf(0));
 			System.out.println(j.evaluate(simp));
 			
 			Node node10 = j.parse("x=3");
@@ -91,7 +91,7 @@ public class DiffExample {
 			// If a variable is changed then any expresion tree
 			// it depends on needs to be re-evaluated to bring
 			// values of other variables upto date
-			j.setVarValue("x",new Double(4));
+			j.setVarValue("x",Double.valueOf(4));
 			System.out.println(j.evaluate(node13));
 			System.out.println(j.evaluate(node15));
 			System.out.println("z: "+j.getVarValue("z").toString());
@@ -100,8 +100,8 @@ public class DiffExample {
 			// re-calculate the value of variables specified by
 			// equations if needed. However a lazy
 			
-			j.setVarValue("x",new Double(5));
-			System.out.println("j.setVarValue(\"x\",new Double(5));");
+			j.setVarValue("x", Double.valueOf(5));
+			System.out.println("j.setVarValue(\"x\",Double.valueOf(5));");
 			System.out.println("j.findVarValue(y): "+j.calcVarValue("y").toString());
 			System.out.println("j.findVarValue(z): "+j.calcVarValue("z").toString());
 
@@ -112,12 +112,12 @@ public class DiffExample {
 			// straight to the chase: no need to calculate 
 			// y explititly to find the value of z.
 			j.getSymbolTable().clearValues();
-			j.setVarValue("x",new Double(6));
-			System.out.println("j.setVarValue(\"x\",new Double(6));");
+			j.setVarValue("x",Double.valueOf(6));
+			System.out.println("j.setVarValue(\"x\",Double.valueOf(6));");
 			System.out.println("j.findVarValue(z): "+j.calcVarValue("z").toString());
 
 			j.getSymbolTable().clearValues();
-			j.setVarValue("x",new Double(7));
+			j.setVarValue("x",Double.valueOf(7));
 			System.out.println(j.evaluate(node15));
 			System.out.println("z: "+j.getVarValue("z").toString());
 		}

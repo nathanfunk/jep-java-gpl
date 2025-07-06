@@ -34,7 +34,7 @@ public class Length extends PostfixMathCommand implements UnaryOperatorI
 		throws ParseException
 	{
 		int neles = lhs.getNumEles();
-		res.setEle(0,new Integer(neles));
+		res.setEle(0,Integer.valueOf(neles));
 		return res;
 	}
 
@@ -44,10 +44,10 @@ public class Length extends PostfixMathCommand implements UnaryOperatorI
 		MatrixValueI res = null;
 		if(obj instanceof MatrixValueI)
 		{
-			res = Scaler.getInstance(new Integer(((MatrixValueI) obj).getNumEles()));
+			res = Scaler.getInstance(Integer.valueOf(((MatrixValueI) obj).getNumEles()));
 		}
 		else
-			res = Scaler.getInstance(new Integer(1));
+			res = Scaler.getInstance(Integer.valueOf(1));
 		aStack.push(res);
 	}
 

@@ -268,30 +268,30 @@ public final class MRpEval implements ParserVisitor {
 	
 	private static final Hashtable functionHash = new Hashtable();
 	{
-		functionHash.put("sin",new Short(SIN));
-		functionHash.put("cos",new Short(COS));
-		functionHash.put("tan",new Short(TAN));
-		functionHash.put("asin",new Short(ASIN));
-		functionHash.put("acos",new Short(ACOS));
-		functionHash.put("atan",new Short(ATAN));
-		functionHash.put("sinh",new Short(SINH));
-		functionHash.put("cosh",new Short(COSH));
-		functionHash.put("tanh",new Short(TANH));
-		functionHash.put("asinh",new Short(ASINH));
-		functionHash.put("acosh",new Short(ACOSH));
-		functionHash.put("atanh",new Short(ATANH));
+		functionHash.put("sin",Short.valueOf(SIN));
+		functionHash.put("cos",Short.valueOf(COS));
+		functionHash.put("tan",Short.valueOf(TAN));
+		functionHash.put("asin",Short.valueOf(ASIN));
+		functionHash.put("acos",Short.valueOf(ACOS));
+		functionHash.put("atan",Short.valueOf(ATAN));
+		functionHash.put("sinh",Short.valueOf(SINH));
+		functionHash.put("cosh",Short.valueOf(COSH));
+		functionHash.put("tanh",Short.valueOf(TANH));
+		functionHash.put("asinh",Short.valueOf(ASINH));
+		functionHash.put("acosh",Short.valueOf(ACOSH));
+		functionHash.put("atanh",Short.valueOf(ATANH));
 
-		functionHash.put("abs",new Short(ABS));
-		functionHash.put("exp",new Short(EXP));
-		functionHash.put("log",new Short(LOG));
-		functionHash.put("ln",new Short(LN));
-		functionHash.put("sqrt",new Short(SQRT));
+		functionHash.put("abs",Short.valueOf(ABS));
+		functionHash.put("exp",Short.valueOf(EXP));
+		functionHash.put("log",Short.valueOf(LOG));
+		functionHash.put("ln",Short.valueOf(LN));
+		functionHash.put("sqrt",Short.valueOf(SQRT));
 
-		functionHash.put("sec",new Short(SEC));
-		functionHash.put("cosec",new Short(COSEC));
-		functionHash.put("cot",new Short(COT));
-		functionHash.put("atan2",new Short(ATAN2));
-		functionHash.put("if",new Short(IF));
+		functionHash.put("sec",Short.valueOf(SEC));
+		functionHash.put("cosec",Short.valueOf(COSEC));
+		functionHash.put("cot",Short.valueOf(COT));
+		functionHash.put("atan2",Short.valueOf(ATAN2));
+		functionHash.put("if",Short.valueOf(IF));
 	}
 	/** Contains the constant values **/
 	private double constVals[] = new double[0];
@@ -355,7 +355,7 @@ public final class MRpEval implements ParserVisitor {
 		public final Dimensions getDims() { return Dimensions.ONE; }
 		public final void copyToVecMat(MatrixValueI res)  throws ParseException {
 			if(! res.getDim().is0D()) throw new ParseException("CopyToVecMat: dimension of argument "+res.getDim()+" is not equal to dimension of object "+getDims());
-			res.setEle(0,new Double(a));
+			res.setEle(0,Double.valueOf(a));
 		}
 		public final String toString() { return String.valueOf(a); }
 		public Object toArray() { return new double[]{a}; }
@@ -423,7 +423,7 @@ public final class MRpEval implements ParserVisitor {
 			{
 				int size = varRefs.size();
 				expandVarArray(var);
-				varRefs.put(var,new Integer(size));
+				varRefs.put(var,Integer.valueOf(size));
 				copyFromVar(var,size);
 				((Variable) var).addObserver(this);
 				return size;
@@ -686,8 +686,8 @@ public final class MRpEval implements ParserVisitor {
 			b = ((Double) val.getEle(1)).doubleValue();
 		}
 		public void copyToVec(MVector val){
-			val.setEle(0,new Double(a));
-			val.setEle(1,new Double(b));
+			val.setEle(0,Double.valueOf(a));
+			val.setEle(1,Double.valueOf(b));
 		}
 		public double[] toArrayVec() { return new double[]{a,b}; }
 	}
@@ -795,9 +795,9 @@ public final class MRpEval implements ParserVisitor {
 			c = ((Double) val.getEle(2)).doubleValue();
 		}
 		public void copyToVec(MVector val){
-			val.setEle(0,new Double(a));
-			val.setEle(1,new Double(b));
-			val.setEle(2,new Double(c));
+			val.setEle(0,Double.valueOf(a));
+			val.setEle(1,Double.valueOf(b));
+			val.setEle(2,Double.valueOf(c));
 		}
 		public double[] toArrayVec() { return new double[]{a,b,c}; }
 	}
@@ -903,10 +903,10 @@ public final class MRpEval implements ParserVisitor {
 			d = ((Double) val.getEle(3)).doubleValue();
 		}
 		public void copyToVec(MVector val){
-			val.setEle(0,new Double(a));
-			val.setEle(1,new Double(b));
-			val.setEle(2,new Double(c));
-			val.setEle(3,new Double(d));
+			val.setEle(0,Double.valueOf(a));
+			val.setEle(1,Double.valueOf(b));
+			val.setEle(2,Double.valueOf(c));
+			val.setEle(3,Double.valueOf(d));
 		}
 		public double[] toArrayVec() { return new double[]{a,b,c,d}; }
 	}
@@ -1028,7 +1028,7 @@ public final class MRpEval implements ParserVisitor {
 		}
 		public void copyToVec(MVector val){
 			for(int i=0;i<data.length;++i)
-				val.setEle(i,new Double(data[i]));
+				val.setEle(i,Double.valueOf(data[i]));
 		}
 		double[] toArrayVec() { return data; }
 		public Object toArray() { 
@@ -1164,10 +1164,10 @@ public final class MRpEval implements ParserVisitor {
 			d = ((Double) val.getEle(1,1)).doubleValue();
 		}
 		public void copyToMat(Matrix val){
-			val.setEle(0,0,new Double(a));
-			val.setEle(0,1,new Double(b));
-			val.setEle(1,0,new Double(c));
-			val.setEle(1,1,new Double(d));
+			val.setEle(0,0,Double.valueOf(a));
+			val.setEle(0,1,Double.valueOf(b));
+			val.setEle(1,0,Double.valueOf(c));
+			val.setEle(1,1,Double.valueOf(d));
 		}
 		public double[][] toArrayMat() { return new double[][]{{a,b},{c,d}}; }
 	}
@@ -1287,12 +1287,12 @@ public final class MRpEval implements ParserVisitor {
 				f = ((Double) val.getEle(1,2)).doubleValue();
 		}
 		public void copyToMat(Matrix val){
-			val.setEle(0,0,new Double(a));
-			val.setEle(0,1,new Double(b));
-			val.setEle(0,2,new Double(c));
-			val.setEle(1,0,new Double(d));
-			val.setEle(1,1,new Double(e));
-			val.setEle(1,2,new Double(f));
+			val.setEle(0,0,Double.valueOf(a));
+			val.setEle(0,1,Double.valueOf(b));
+			val.setEle(0,2,Double.valueOf(c));
+			val.setEle(1,0,Double.valueOf(d));
+			val.setEle(1,1,Double.valueOf(e));
+			val.setEle(1,2,Double.valueOf(f));
 		}
 		public double[][] toArrayMat() { return new double[][]{{a,b,c},{d,e,f}}; }
 	}
@@ -1430,14 +1430,14 @@ public final class MRpEval implements ParserVisitor {
 				h = ((Double) val.getEle(1,3)).doubleValue();
 		}
 		public void copyToMat(Matrix val){
-			val.setEle(0,0,new Double(a));
-			val.setEle(0,1,new Double(b));
-			val.setEle(0,2,new Double(c));
-			val.setEle(0,3,new Double(d));
-			val.setEle(1,0,new Double(e));
-			val.setEle(1,1,new Double(f));
-			val.setEle(1,2,new Double(g));
-			val.setEle(1,3,new Double(h));
+			val.setEle(0,0,Double.valueOf(a));
+			val.setEle(0,1,Double.valueOf(b));
+			val.setEle(0,2,Double.valueOf(c));
+			val.setEle(0,3,Double.valueOf(d));
+			val.setEle(1,0,Double.valueOf(e));
+			val.setEle(1,1,Double.valueOf(f));
+			val.setEle(1,2,Double.valueOf(g));
+			val.setEle(1,3,Double.valueOf(h));
 		}
 		public double[][] toArrayMat() { return new double[][]{{a,b,c,d},{e,f,g,h}}; }
 	}
@@ -1591,12 +1591,12 @@ public final class MRpEval implements ParserVisitor {
 				f = ((Double) val.getEle(2,1)).doubleValue();
 		}
 		public void copyToMat(Matrix val){
-			val.setEle(0,0,new Double(a));
-			val.setEle(0,1,new Double(b));
-			val.setEle(1,0,new Double(c));
-			val.setEle(1,1,new Double(d));
-			val.setEle(2,0,new Double(e));
-			val.setEle(2,1,new Double(f));
+			val.setEle(0,0,Double.valueOf(a));
+			val.setEle(0,1,Double.valueOf(b));
+			val.setEle(1,0,Double.valueOf(c));
+			val.setEle(1,1,Double.valueOf(d));
+			val.setEle(2,0,Double.valueOf(e));
+			val.setEle(2,1,Double.valueOf(f));
 		}
 		public double[][] toArrayMat() { return new double[][]{{a,b},{c,d},{e,f}}; }
 	}
@@ -1717,15 +1717,15 @@ public final class MRpEval implements ParserVisitor {
 		static Dimensions dims = Dimensions.valueOf(3,3);
 		public Dimensions getDims() { return dims;	}
 		public void copyToMat(Matrix val){
-			val.setEle(0,0,new Double(a));
-			val.setEle(0,1,new Double(b));
-			val.setEle(0,2,new Double(c));
-			val.setEle(1,0,new Double(d));
-			val.setEle(1,1,new Double(e));
-			val.setEle(1,2,new Double(f));
-			val.setEle(2,0,new Double(g));
-			val.setEle(2,1,new Double(h));
-			val.setEle(2,2,new Double(i));
+			val.setEle(0,0,Double.valueOf(a));
+			val.setEle(0,1,Double.valueOf(b));
+			val.setEle(0,2,Double.valueOf(c));
+			val.setEle(1,0,Double.valueOf(d));
+			val.setEle(1,1,Double.valueOf(e));
+			val.setEle(1,2,Double.valueOf(f));
+			val.setEle(2,0,Double.valueOf(g));
+			val.setEle(2,1,Double.valueOf(h));
+			val.setEle(2,2,Double.valueOf(i));
 		}
 		public String toString() { 
 			return "[["+a+","+b+","+c+"],"+ 
@@ -1889,18 +1889,18 @@ public final class MRpEval implements ParserVisitor {
 		private static Dimensions dims = Dimensions.valueOf(3,4);
 		public Dimensions getDims() { return dims;	}
 		public void copyToMat(Matrix val){
-			val.setEle(0,0,new Double(a));
-			val.setEle(0,1,new Double(b));
-			val.setEle(0,2,new Double(c));
-			val.setEle(0,3,new Double(d));
-			val.setEle(1,0,new Double(e));
-			val.setEle(1,1,new Double(f));
-			val.setEle(1,2,new Double(g));
-			val.setEle(1,3,new Double(h));
-			val.setEle(2,0,new Double(i));
-			val.setEle(2,1,new Double(j));
-			val.setEle(2,2,new Double(k));
-			val.setEle(2,3,new Double(l));
+			val.setEle(0,0,Double.valueOf(a));
+			val.setEle(0,1,Double.valueOf(b));
+			val.setEle(0,2,Double.valueOf(c));
+			val.setEle(0,3,Double.valueOf(d));
+			val.setEle(1,0,Double.valueOf(e));
+			val.setEle(1,1,Double.valueOf(f));
+			val.setEle(1,2,Double.valueOf(g));
+			val.setEle(1,3,Double.valueOf(h));
+			val.setEle(2,0,Double.valueOf(i));
+			val.setEle(2,1,Double.valueOf(j));
+			val.setEle(2,2,Double.valueOf(k));
+			val.setEle(2,3,Double.valueOf(l));
 		}
 		public String toString() { 
 			return "[["+a+","+b+","+c+","+d+"],"+ 
@@ -2089,14 +2089,14 @@ public final class MRpEval implements ParserVisitor {
 		private static Dimensions dims = Dimensions.valueOf(4,2);
 		public Dimensions getDims() { return dims;	}
 		public void copyToMat(Matrix val){
-			val.setEle(0,0,new Double(a));
-			val.setEle(0,1,new Double(b));
-			val.setEle(1,0,new Double(c));
-			val.setEle(1,1,new Double(d));
-			val.setEle(2,0,new Double(e));
-			val.setEle(2,1,new Double(f));
-			val.setEle(3,0,new Double(g));
-			val.setEle(3,1,new Double(h));
+			val.setEle(0,0,Double.valueOf(a));
+			val.setEle(0,1,Double.valueOf(b));
+			val.setEle(1,0,Double.valueOf(c));
+			val.setEle(1,1,Double.valueOf(d));
+			val.setEle(2,0,Double.valueOf(e));
+			val.setEle(2,1,Double.valueOf(f));
+			val.setEle(3,0,Double.valueOf(g));
+			val.setEle(3,1,Double.valueOf(h));
 		}
 		public String toString() { 
 			return "[["+a+","+b+"],"+ 
@@ -2255,18 +2255,18 @@ public final class MRpEval implements ParserVisitor {
 		private static Dimensions dims = Dimensions.valueOf(4,3);
 		public Dimensions getDims() { return dims;	}
 		public void copyToMat(Matrix val){
-			val.setEle(0,0,new Double(a));
-			val.setEle(0,1,new Double(b));
-			val.setEle(0,2,new Double(c));
-			val.setEle(1,0,new Double(d));
-			val.setEle(1,1,new Double(e));
-			val.setEle(1,2,new Double(f));
-			val.setEle(2,0,new Double(g));
-			val.setEle(2,1,new Double(h));
-			val.setEle(2,2,new Double(i));
-			val.setEle(3,0,new Double(j));
-			val.setEle(3,1,new Double(k));
-			val.setEle(3,2,new Double(l));
+			val.setEle(0,0,Double.valueOf(a));
+			val.setEle(0,1,Double.valueOf(b));
+			val.setEle(0,2,Double.valueOf(c));
+			val.setEle(1,0,Double.valueOf(d));
+			val.setEle(1,1,Double.valueOf(e));
+			val.setEle(1,2,Double.valueOf(f));
+			val.setEle(2,0,Double.valueOf(g));
+			val.setEle(2,1,Double.valueOf(h));
+			val.setEle(2,2,Double.valueOf(i));
+			val.setEle(3,0,Double.valueOf(j));
+			val.setEle(3,1,Double.valueOf(k));
+			val.setEle(3,2,Double.valueOf(l));
 		}
 		public String toString() { 
 			return "[["+a+","+b+","+c+"],"+ 
@@ -2459,22 +2459,22 @@ public final class MRpEval implements ParserVisitor {
 		private static Dimensions dims = Dimensions.valueOf(4,4);
 		public Dimensions getDims() { return dims;	}
 		public void copyToMat(Matrix val){
-			val.setEle(0,0,new Double(a));
-			val.setEle(0,1,new Double(b));
-			val.setEle(0,2,new Double(c));
-			val.setEle(0,3,new Double(d));
-			val.setEle(1,0,new Double(e));
-			val.setEle(1,1,new Double(f));
-			val.setEle(1,2,new Double(g));
-			val.setEle(1,3,new Double(h));
-			val.setEle(2,0,new Double(i));
-			val.setEle(2,1,new Double(j));
-			val.setEle(2,2,new Double(k));
-			val.setEle(2,3,new Double(l));
-			val.setEle(3,0,new Double(m));
-			val.setEle(3,1,new Double(n));
-			val.setEle(3,2,new Double(o));
-			val.setEle(3,3,new Double(p));
+			val.setEle(0,0,Double.valueOf(a));
+			val.setEle(0,1,Double.valueOf(b));
+			val.setEle(0,2,Double.valueOf(c));
+			val.setEle(0,3,Double.valueOf(d));
+			val.setEle(1,0,Double.valueOf(e));
+			val.setEle(1,1,Double.valueOf(f));
+			val.setEle(1,2,Double.valueOf(g));
+			val.setEle(1,3,Double.valueOf(h));
+			val.setEle(2,0,Double.valueOf(i));
+			val.setEle(2,1,Double.valueOf(j));
+			val.setEle(2,2,Double.valueOf(k));
+			val.setEle(2,3,Double.valueOf(l));
+			val.setEle(3,0,Double.valueOf(m));
+			val.setEle(3,1,Double.valueOf(n));
+			val.setEle(3,2,Double.valueOf(o));
+			val.setEle(3,3,Double.valueOf(p));
 		}
 		public String toString() { 
 			return "[["+a+","+b+","+c+","+d+"],"+ 
@@ -2819,7 +2819,7 @@ public final class MRpEval implements ParserVisitor {
 		public void copyToMat(Matrix val){
 			for(int i=0;i<rows;++i)
 				for(int j=0;j<cols;++j)
-					val.setEle(i,j,new Double(data[i][j]));
+					val.setEle(i,j,Double.valueOf(data[i][j]));
 		}
 		double[][] toArrayMat() { return data; }
 		public Object toArray() { 

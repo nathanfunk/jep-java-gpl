@@ -63,7 +63,7 @@ public class Subtract extends PostfixMathCommand
 
 	public Double sub(Number d1, Number d2)
 	{
-		return new Double(d1.doubleValue() - d2.doubleValue());
+		return Double.valueOf(d1.doubleValue() - d2.doubleValue());
 	}
 	
 	public Complex sub(Complex c1, Complex c2)

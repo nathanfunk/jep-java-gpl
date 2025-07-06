@@ -82,7 +82,7 @@ public class SJepTest extends TestCase {
 
 	public void valueTest(String expr,double dub) throws Exception
 	{
-		valueTest(expr,new Double(dub));
+		valueTest(expr,Double.valueOf(dub));
 	}
 	public void valueTest(String expr,Object expected) throws Exception
 	{

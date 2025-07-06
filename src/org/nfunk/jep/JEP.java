@@ -221,8 +221,8 @@ public class JEP {
 	 */
 	public void addStandardConstants() {
 		//add constants to Symbol Table
-		symTab.addConstant("pi", new Double(Math.PI));
-		symTab.addConstant("e", new Double(Math.E));
+		symTab.addConstant("pi", Double.valueOf(Math.PI));
+		symTab.addConstant("e", Double.valueOf(Math.E));
 	}
 	
 	/**
@@ -278,7 +278,7 @@ public class JEP {
 	 * @return Double object of the variable
 	 */
 	public Double addVariable(String name, double value) {
-		Double object = new Double(value);
+		Double object = Double.valueOf(value);
 		symTab.makeVarIfNeeded(name, object);
 		return object;
 	}

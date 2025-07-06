@@ -18,7 +18,7 @@ public class Scaler extends Number implements MatrixValueI {
 	private static final long serialVersionUID = 336717881577257953L;
 	Object value;
 	protected Scaler() {
-		value = new Double(0.0);
+		value = Double.valueOf(0.0);
 	}
 	protected Scaler(Object o) {
 		value = o;

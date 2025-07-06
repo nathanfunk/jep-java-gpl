@@ -45,7 +45,7 @@ public class ArcSineH extends PostfixMathCommand
 		{
 			double val = ((Number)param).doubleValue();
 			double res = Math.log(val+Math.sqrt(val*val+1));
-			return new Double(res);
+			return Double.valueOf(res);
 //			Complex temp = new Complex(((Number)param).doubleValue(),0.0);
 //			return temp.asinh();
 		}

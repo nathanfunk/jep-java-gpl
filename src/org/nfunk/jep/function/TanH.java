@@ -39,7 +39,7 @@ public class TanH extends PostfixMathCommand
 		else if (param instanceof Number)
 		{
 			double value = ((Number)param).doubleValue();
-			return new Double((Math.exp(value)-Math.exp(-value))/(Math.pow(Math.E,value)+Math.pow(Math.E,-value)));
+			return Double.valueOf((Math.exp(value)-Math.exp(-value))/(Math.pow(Math.E,value)+Math.pow(Math.E,-value)));
 		}
 		throw new ParseException("Invalid parameter type");
 	}

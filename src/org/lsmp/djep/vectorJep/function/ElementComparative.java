@@ -44,7 +44,7 @@ public class ElementComparative extends Comparative implements BinaryOperatorI {
 				case NE: val = ne(lhs.getEle(i),rhs.getEle(i)); break;
 				case EQ: val = eq(lhs.getEle(i),rhs.getEle(i)); break;
 				}
-				res.setEle(i,val?new Double(1):new Double(0));
+				res.setEle(i,val?Double.valueOf(1):Double.valueOf(0));
 			}
 			return res;
 	}

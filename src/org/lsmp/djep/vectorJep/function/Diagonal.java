@@ -40,7 +40,7 @@ public class Diagonal extends PostfixMathCommand implements UnaryOperatorI
 		for(int i=0;i<n;++i)
 		{
 			for(int j=0;j<n;++j)
-				mat.setEle(i,j,new Double(0.0));
+				mat.setEle(i,j,Double.valueOf(0.0));
 			mat.setEle(i,i,lhs.getEle(i));
 		}
 		return res;

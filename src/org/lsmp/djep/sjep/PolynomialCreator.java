@@ -82,8 +82,8 @@ public class PolynomialCreator extends DoNothingVisitor {
 			infinity = div(one,zero);
 			nan = div(zero,zero);
 		} catch(ParseException e) {
-			infinity = new Double(Double.POSITIVE_INFINITY);
-			nan = new Double(Double.NaN);
+			infinity = Double.valueOf(Double.POSITIVE_INFINITY);
+			nan = Double.valueOf(Double.NaN);
 		}
 			
 		zeroConstant = new PConstant(this,zero);
@@ -281,7 +281,7 @@ public class PolynomialCreator extends DoNothingVisitor {
 
 	Object intToValue(int i)
 	{
-		return new Double(i);	
+		return Double.valueOf(i);	
 	}
 	Object raise(Object a,Object b) throws ParseException 
 	{

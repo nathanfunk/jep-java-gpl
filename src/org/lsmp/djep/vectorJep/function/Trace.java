@@ -66,7 +66,7 @@ public class Trace extends PostfixMathCommand implements UnaryOperatorI
 	public void run(Stack s) throws ParseException
 	{
 		MatrixValueI obj = (MatrixValueI) s.pop();
-		MatrixValueI res = Scaler.getInstance(new Double(0.0));
+		MatrixValueI res = Scaler.getInstance(Double.valueOf(0.0));
 		calcValue(res,obj);
 		s.push(res);
 	}

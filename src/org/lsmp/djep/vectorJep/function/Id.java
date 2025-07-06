@@ -32,8 +32,8 @@ public class Id extends PostfixMathCommand
 		for(int i=0;i<n;++i)
 		{
 			for(int j=0;j<n;++j)
-				mat.setEle(i,j,new Double(0.0));
-			mat.setEle(i,i,new Double(1.0));
+				mat.setEle(i,j,Double.valueOf(0.0));
+			mat.setEle(i,i,Double.valueOf(1.0));
 		}
 		s.push(mat);
 	}

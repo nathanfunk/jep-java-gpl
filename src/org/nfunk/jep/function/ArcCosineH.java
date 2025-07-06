@@ -46,7 +46,7 @@ public class ArcCosineH extends PostfixMathCommand
 			double val = ((Number)param).doubleValue();
 			if(val >= 1.0) {
 				double res = Math.log(val+Math.sqrt(val*val-1));
-				return new Double(res);
+				return Double.valueOf(res);
 			}
 			else
 			{

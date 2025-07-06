@@ -86,7 +86,7 @@ public class VRange extends org.nfunk.jep.function.Range
 	public Object genRange(double low, double inc, int steps) {
 		MVector res = new MVector(steps);
 		for(int i=0;i<steps;++i)
-			res.setEle(i,new Double(low+inc*i));
+			res.setEle(i,Double.valueOf(low+inc*i));
 		return res;
 	}
 	

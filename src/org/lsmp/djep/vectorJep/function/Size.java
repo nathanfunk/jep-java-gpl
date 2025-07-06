@@ -44,12 +44,12 @@ public class Size extends PostfixMathCommand implements UnaryOperatorI
 		Dimensions dims = lhs.getDim();
 		if(dims.is0D())
 		{
-			res.setEle(0,new Integer(1));
+			res.setEle(0,Integer.valueOf(1));
 			return res;
 		}
 		for(int i=0;i<dims.rank();++i)
 		{
-			res.setEle(i,new Integer(dims.getIthDim(i)));
+			res.setEle(i,Integer.valueOf(dims.getIthDim(i)));
 		}
 		return res;
 	}
@@ -60,19 +60,19 @@ public class Size extends PostfixMathCommand implements UnaryOperatorI
 		MatrixValueI res = null;
 		if(obj instanceof Scaler)
 		{
-			res = Scaler.getInstance(new Integer(1)); 
+			res = Scaler.getInstance(Integer.valueOf(1)); 
 		}
 		else if(obj instanceof MVector)
-			res = Scaler.getInstance(new Integer(((MVector) obj).getNumEles()));
+			res = Scaler.getInstance(Integer.valueOf(((MVector) obj).getNumEles()));
 		else if(obj instanceof MatrixValueI)
 		{
 			Dimensions inDim = ((MatrixValueI) obj).getDim();
 			res = MVector.getInstance(inDim.rank());
 			for(int i=0;i<inDim.rank();++i)
-				res.setEle(i,new Integer(inDim.getIthDim(i)));
+				res.setEle(i,Integer.valueOf(inDim.getIthDim(i)));
 		}
 		else
-			res = Scaler.getInstance(new Integer(1));
+			res = Scaler.getInstance(Integer.valueOf(1));
 		s.push(res); 
 	}
 

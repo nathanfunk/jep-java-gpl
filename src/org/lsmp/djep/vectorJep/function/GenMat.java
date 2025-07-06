@@ -94,7 +94,7 @@ public class GenMat extends PostfixMathCommand implements CallbackEvaluationI
 		{
 			for(int i=0;i<sizes[0];++i)
 			{
-				vars[0].setValue(new Integer(i+1));
+				vars[0].setValue(Integer.valueOf(i+1));
 				Object val = pv.eval(node.jjtGetChild(1));
 				res.setEle(i,val);
 			}
@@ -105,10 +105,10 @@ public class GenMat extends PostfixMathCommand implements CallbackEvaluationI
 			Matrix mat = (Matrix) res;
 			for(int i=0;i<sizes[0];++i)
 			{
-				vars[0].setValue(new Integer(i+1));
+				vars[0].setValue(Integer.valueOf(i+1));
 				for(int j=0;j<sizes[1];++j)
 				{
-					vars[1].setValue(new Integer(j+1));
+					vars[1].setValue(Integer.valueOf(j+1));
 					Object val = pv.eval(node.jjtGetChild(1));
 					mat.setEle(i,j,val);
 				}

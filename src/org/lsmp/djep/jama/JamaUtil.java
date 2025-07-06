@@ -82,7 +82,7 @@ public final class JamaUtil
 		Object out[][] = m.getEles();
 		for(int i=0;i<rows;++i)
 			for(int j=0;j<cols;++j)
-				out[i][j] = new Double(in[i][j]);
+				out[i][j] = Double.valueOf(in[i][j]);
 		return m;
 	}
 	public static Matrix fromJama(Jama.Matrix A)
@@ -94,7 +94,7 @@ public final class JamaUtil
 		Object out[][] = m.getEles();
 		for(int i=0;i<rows;++i)
 			for(int j=0;j<cols;++j)
-				out[i][j] = new Double(in[i][j]);
+				out[i][j] = Double.valueOf(in[i][j]);
 		return m;
 	}
 	

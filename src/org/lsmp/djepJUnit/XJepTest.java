@@ -284,30 +284,30 @@ public class XJepTest extends JepTest {
 	{
 		XJep xj = (XJep) j;
 		System.out.println("\nTesting variable reuse");
-		parseProcSimpEval("x=3",new Double(3));
-		Node node13 = parseProcSimpEval("y=x^2",new Double(9));
-		Node node15 = parseProcSimpEval("z=y+x",new Double(12));
+		parseProcSimpEval("x=3",Double.valueOf(3));
+		Node node13 = parseProcSimpEval("y=x^2",Double.valueOf(9));
+		Node node15 = parseProcSimpEval("z=y+x",Double.valueOf(12));
 			
-		j.setVarValue("x",new Double(4));
-		System.out.println("j.setVarValue(\"x\",new Double(4));");
+		j.setVarValue("x",Double.valueOf(4));
+		System.out.println("j.setVarValue(\"x\",Double.valueOf(4));");
 		System.out.println("j.getVarValue(y): "+j.getVarValue("y"));
 		myAssertEquals("eval y eqn","16.0",j.evaluate(node13).toString());
 		System.out.println("j.getVarValue(y): "+j.getVarValue("y"));
 		myAssertEquals("eval z eqn","20.0",j.evaluate(node15).toString());
 
 //		j.getSymbolTable().clearValues();
-		j.setVarValue("x",new Double(5));
-		System.out.println("j.setVarValue(\"x\",new Double(5));");
+		j.setVarValue("x",Double.valueOf(5));
+		System.out.println("j.setVarValue(\"x\",Double.valueOf(5));");
 		myAssertEquals("j.findVarValue(y)","25.0",xj.calcVarValue("y").toString());
 		myAssertEquals("j.findVarValue(z)","30.0",xj.calcVarValue("z").toString());
 
 		j.getSymbolTable().clearValues();
-		j.setVarValue("x",new Double(6));
-		System.out.println("j.setVarValue(\"x\",new Double(6));");
+		j.setVarValue("x",Double.valueOf(6));
+		System.out.println("j.setVarValue(\"x\",Double.valueOf(6));");
 		myAssertEquals("j.findVarValue(z)","42.0",xj.calcVarValue("z").toString());
 		myAssertEquals("j.findVarValue(y)","36.0",xj.calcVarValue("y").toString());
 
-		parseProcSimpEval("x=7",new Double(7));
+		parseProcSimpEval("x=7",Double.valueOf(7));
 		myAssertEquals("eval y eqn","49.0",j.evaluate(node13).toString());
 		myAssertEquals("eval z eqn","56.0",j.evaluate(node15).toString());
 	}
