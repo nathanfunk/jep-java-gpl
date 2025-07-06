@@ -202,7 +202,7 @@ public class SimpleCharStream
    * @deprecated 
    * @see #getEndColumn
    */
-
+  @Deprecated
   static public int getColumn() {
      return bufcolumn[bufpos];
   }
@@ -211,7 +211,7 @@ public class SimpleCharStream
    * @deprecated 
    * @see #getEndLine
    */
-
+  @Deprecated
   static public int getLine() {
      return bufline[bufpos];
   }

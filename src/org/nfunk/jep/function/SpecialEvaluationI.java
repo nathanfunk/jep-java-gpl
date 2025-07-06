@@ -12,6 +12,7 @@ import java.util.Stack;
  * @see CallbackEvaluationI
  * Created on 18-Nov-2003
  */
+@Deprecated
 public interface SpecialEvaluationI {
 
 	/**

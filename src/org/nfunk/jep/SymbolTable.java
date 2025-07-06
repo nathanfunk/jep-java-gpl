@@ -80,6 +80,7 @@ public class SymbolTable extends Hashtable
 	/**
 	 * @deprecated The getValue or getVar methods should be used instead. 
 	 */
+	@Deprecated
 	public Object get(Object key) { return getValue(key); }
 	
 
@@ -102,6 +103,7 @@ public class SymbolTable extends Hashtable
 	/**
 	 * @deprecated The setVarValue or makeVar methods should be used instead.
 	 */
+	@Deprecated
 	public Object put(Object key,Object val)
 	{
 		return makeVarIfNeeded((String) key,val);
