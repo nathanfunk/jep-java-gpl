@@ -4,7 +4,7 @@
 
   <groupId>org.nfunk</groupId>
   <artifactId>jep</artifactId>
-  <version>2.4.2</version>
+  <version>2.4.3</version>
   
   <!-- Required metadata for Maven Central -->
   <name>JEP - Java Expression Parser</name>
