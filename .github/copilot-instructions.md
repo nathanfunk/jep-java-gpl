@@ -15,7 +15,6 @@ Always reference these instructions first and fallback to search or bash command
 - Full build and test: `mvn clean install -Dmaven.javadoc.skip=true -Dgpg.skip=true` -- takes 8 seconds. NEVER CANCEL. Set timeout to 60+ seconds.
 
 ### Build Issues and Workarounds
-- **Javadoc generation FAILS** due to HTML5 compatibility issues with `<tt>` tags in source code comments. Always use `-Dmaven.javadoc.skip=true`.
 - **GPG signing FAILS** without proper GPG keys configured. Always use `-Dgpg.skip=true` for local development.
 - Use working build command: `mvn clean install -Dmaven.javadoc.skip=true -Dgpg.skip=true`
 
