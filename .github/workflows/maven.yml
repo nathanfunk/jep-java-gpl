@@ -20,7 +20,7 @@ jobs:
       with:
         java-version: 17
     - name: Build with Maven
-      run: mvn clean install
+      run: mvn clean install -Dgpg.skip=true -Dmaven.javadoc.skip=true
       
     - name: Archive production artifacts
       uses: actions/upload-artifact@v4
