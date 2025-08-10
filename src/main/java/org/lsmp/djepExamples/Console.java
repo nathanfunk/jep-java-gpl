@@ -57,7 +57,7 @@ import java.awt.event.*;
 * public void printHelp()
 * </pre>
 * can all be overwritten.
-* </p>
+* 
 * <p>
 * Furthermore main should be overwritten. For example
 * <pre> 

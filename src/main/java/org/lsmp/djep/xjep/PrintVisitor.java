@@ -12,7 +12,7 @@ import java.text.FieldPosition;
 /**
  * Prints an expression.
  * Prints the expression with lots of brackets.
- * <tt>((-1.0)/sqrt((1.0-(x^2.0))))</tt>.
+ * <code>((-1.0)/sqrt((1.0-(x^2.0))))</code>.
  * To use
  * <pre>
  * XJep j = ...; Node in = ...;
@@ -113,7 +113,7 @@ public class PrintVisitor extends ErrorCatchingVisitor
 	 *  	public void append(Node node,PrintVisitor pv) throws ParseException
 	 *		{
 	 *			pv.append("[");
-	 *			for(int i=0;i<node.jjtGetNumChildren();++i)
+	 *			for(int i=0;i&lt;node.jjtGetNumChildren();++i)
 	 *			{
 	 *				if(i>0) pv.append(",");
 	 *				node.jjtGetChild(i).jjtAccept(pv, null);

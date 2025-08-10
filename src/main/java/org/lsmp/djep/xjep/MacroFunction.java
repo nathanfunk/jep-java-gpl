@@ -17,9 +17,9 @@ import java.util.*;
  * </pre>
  * The names of the variables used inside the function depends on the number of arguments:
  * <ul>
- * <li>One argument variable must be x: <tt>new MacroFunction("sec",1,"1/cos(x)",j)</tt></li>
- * <li>Two arguments variables must be x or y: <tt>new MacroFunction("myPower",2,"x^y",j)</tt></li>
- * <li>Three or more arguments variables must be x1, x2, x3,...: <tt>new MacroFunction("add3",3,"x1+x2+x3",j)</tt></li>
+ * <li>One argument variable must be x: <code>new MacroFunction("sec",1,"1/cos(x)",j)</code></li>
+ * <li>Two arguments variables must be x or y: <code>new MacroFunction("myPower",2,"x^y",j)</code></li>
+ * <li>Three or more arguments variables must be x1, x2, x3,...: <code>new MacroFunction("add3",3,"x1+x2+x3",j)</code></li>
  * </ul>
  * @author R Morris.
  * Created on 18-Jun-2003
@@ -38,7 +38,7 @@ public class MacroFunction extends PostfixMathCommand
 	
 	/**
 	 * Create a function specified by a string.
-	 * For example <tt>new MacroFunction("sec",1,"1/cos(x)",tu)</tt> creates the function for sec.
+	 * For example <code>new MacroFunction("sec",1,"1/cos(x)",tu)</code> creates the function for sec.
 	 * Variable names must be x,y for 1 or 2 variables or x1,x2,x3,.. for 3 or more variables.
 	 * @param inName name of function
 	 * @param nargs number of arguments

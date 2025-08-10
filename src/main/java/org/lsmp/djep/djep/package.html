@@ -7,19 +7,19 @@ which performs the differentation by repeated applications
 of the chain, product and quotient rules.
 Typically the result of differentation should be simplified
 to remove occurences of reduant expresions (for example
-<tt>diff(x^2.0,x)</tt> is <tt>2.0*x^1.0*1.0</tt> which is simplified to <tt>2.0*x</tt>).
+<code>diff(x^2.0,x)</code> is <code>2.0*x^1.0*1.0</code> which is simplified to <code>2.0*x</code>).
 </p>
 <p>
 For each function a rule is used to specify how to differentiate it.
-For example the differative of <tt>sin</tt> is specified using
+For example the differative of <code>sin</code> is specified using
 <pre>addDiffRule(new MacroDiffRules(Jep,"sin","cos(x)"))</pre>
-There are various classes of differentation rule which
-all implement {@link org.lsmp.djep.djep.DiffRulesI DiffRulesI} and have special behavious.
-</p>
+There are various classes of differentiation rule which
+all implement {@link org.lsmp.djep.djep.DiffRulesI DiffRulesI} and have special behaviours.
+
 <p>
 Variables can also be differentiated, and the derivative of
-<tt>y</tt> with respect to <tt>x</tt> will be represented 
-by the {@link org.lsmp.djep.djep.PartialDerivative PartialDerivative} <tt>dy/dx</tt>.
+<code>y</code> with respect to <code>x</code> will be represented 
+by the {@link org.lsmp.djep.djep.PartialDerivative PartialDerivative} <code>dy/dx</code>.
 To allow this the {@link org.lsmp.djep.djep.DVariable DVariable} is used to represent 
 variable and
 {@link org.lsmp.djep.djep.DSymbolTable DSymbolTable} and 
@@ -27,15 +27,14 @@ variable and
 the look up of variables and the creation of new variables.
 </p>
 
-<table BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
-<tr BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-<td COLSPAN=2><font SIZE="+2">
-<b>Sub-packages</b></font></td>
+<table border="1" style="border-collapse:collapse; width:100%;">
+<caption>Sub-packages</caption>
+<tr style="background-color:#CCCCFF;">
+<td colspan="2" style="font-size:larger; font-weight:bold;">Sub-packages</td>
 </tr>
-<tr BGCOLOR="white" CLASS="TableRowColor">
-<td WIDTH="15%"><b><a HREF="diffRules/package-summary.html">org.lsmp.djep.djep.diffRules</a></b></td>
-<td>Classes defining how to perform differentation of given functions.
- </td>
+<tr style="background-color:white;">
+<td style="width:15%; font-weight:bold;"><a href="diffRules/package-summary.html">org.lsmp.djep.djep.diffRules</a></td>
+<td>Classes defining how to perform differentiation of given functions.</td>
 </tr>
 </table>
 @see <a href="../../../../../html/extensions/djep.html">DJep documentation</a>

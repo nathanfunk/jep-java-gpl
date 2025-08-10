@@ -431,7 +431,7 @@ public class JEP {
 	public boolean getAllowUndeclared() { return allowUndeclared; }
 	
 	/**
-	 * Sets whether assignment equations like <tt>y=x+1</tt> are allowed.
+	 * Sets whether assignment equations like <code>y=x+1</code> are allowed.
 	 * @since 2.3.0 alpha
 	 */
 	public void setAllowAssignment(boolean value) {
@@ -439,7 +439,7 @@ public class JEP {
 	}
 
 	/**
-	 * Whether assignment equation <tt>y=x+1</tt> equations are allowed.
+	 * Whether assignment equation <code>y=x+1</code> equations are allowed.
 	 * @since 2.3.0 alpha
 	 */
 	public boolean getAllowAssignment() { return allowAssignment; }

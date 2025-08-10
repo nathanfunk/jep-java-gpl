@@ -35,7 +35,7 @@ public class POperator extends AbstractPNode {
 	}
 
 	/**
-	this < arg ---> -1
+	this &lt; arg ---&gt; -1
 	this > arg ---> 1
 	*/
 	public int compareTo(POperator fun)

@@ -30,7 +30,7 @@ import java.util.*;
  * <pre>
  * rpe.setVarValue(ref,0.1234);
  * </pre>
- * Variable values can also be set using the standard <tt>Variable.setValue()</tt> or (slower) <tt>JEP.setVarVal(name,vlaue)</tt> methods.
+ * Variable values can also be set using the standard <code>Variable.setValue()</code> or (slower) <code>JEP.setVarVal(name,vlaue)</code> methods.
  * Setting the value of a jep variable will automatically update the corresponding rpe value but there will be a performance hit. 
  * Setting the value of the rpe variable does not change the corresponding jep value.
  * <p> 
