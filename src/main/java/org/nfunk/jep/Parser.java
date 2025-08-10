@@ -78,7 +78,7 @@ public class Parser/*@bgen(jjtree)*/implements ParserTreeConstants, ParserConsta
         /**
 	 * Sets the initial state that the token manager is in.
 	 * Can be used to change how x.x is interpreted, either as a single
-	 * identifier (DEFAULT) or as x <DOT> x (NO_DOT_IN_IDENTIFIERS)
+	 * identifier (DEFAULT) or as x &lt;DOT&gt; x (NO_DOT_IN_IDENTIFIERS)
 	 * @param state the state to be in. Currently the only legal values are DEFAULT and NO_DOT_IN_IDENTIFIER
 	 */
         public void setInitialTokenManagerState(int state)

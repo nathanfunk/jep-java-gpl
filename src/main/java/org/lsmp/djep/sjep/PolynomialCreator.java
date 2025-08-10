@@ -23,7 +23,6 @@ Polynomial([
   Monomial(4.0,[x,Function(sin,arg)],[1,1])
 ])
 </pre>
-</p>
 
 <p>
 A total ordering of all expressions is used. 

@@ -141,8 +141,8 @@ public abstract class AbstractPNode implements PNodeI
 	public boolean isZero()	{return false;	}
 	public boolean isOne()	{return false;	}
 	/**
-	this < arg ---> -1
-	this > arg ---> 1
+	this &lt; arg ---&gt; -1
+	this &gt; arg ---&gt; 1
 	*/
 	public int compareTo(PNodeI node)	{
 		if(this instanceof PConstant)
