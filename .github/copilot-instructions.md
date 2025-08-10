@@ -12,11 +12,11 @@ Always reference these instructions first and fallback to search or bash command
 - Ensure Java 17+ is installed: `java -version`
 - Ensure Maven 3.6+ is available: `mvn --version`
 - Clean build: `mvn clean compile` -- takes 5 seconds. NEVER CANCEL. Set timeout to 60+ seconds.
-- Full build and test: `mvn clean install -Dmaven.javadoc.skip=true -Dgpg.skip=true` -- takes 8 seconds. NEVER CANCEL. Set timeout to 60+ seconds.
+- Full build and test: `mvn clean install -Dgpg.skip=true` -- takes 8 seconds. NEVER CANCEL. Set timeout to 60+ seconds.
 
 ### Build Issues and Workarounds
 - **GPG signing FAILS** without proper GPG keys configured. Always use `-Dgpg.skip=true` for local development.
-- Use working build command: `mvn clean install -Dmaven.javadoc.skip=true -Dgpg.skip=true`
+- Use working build command: `mvn clean install -Dgpg.skip=true`
 
 ### Testing
 - Run tests only: `mvn test -Dgpg.skip=true` -- takes 3 seconds. NEVER CANCEL. Set timeout to 30+ seconds.
@@ -107,7 +107,7 @@ target/
 mvn clean compile
 
 # Full build with tests (8 seconds, recommended)
-mvn clean install -Dmaven.javadoc.skip=true -Dgpg.skip=true
+mvn clean install -Dgpg.skip=true
 
 # Test only (3 seconds)
 mvn test -Dgpg.skip=true
