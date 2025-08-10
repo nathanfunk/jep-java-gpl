@@ -42,7 +42,7 @@ import java.util.*;
  * <pre>
  * MRpCommandList list = rpe.compile(node);
  * int ref = rpe.getVarRef(j.getVar("x"));
- * for(double x=-1.;x<1.001;x+=0.1) {
+ * for(double x=-1.;x&lt;1.001;x+=0.1) {
  *      rpe.setVarVal(ref,x);
  *      rpe.evaluate(list);
  * }

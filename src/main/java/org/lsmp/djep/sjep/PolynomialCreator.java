@@ -10,27 +10,26 @@ import org.nfunk.jep.function.*;
 /**
  * Main entry point for simplification routines.
  *
- *<p>
-Uses a complete reworking of the ways equations are represented.
-A tree structure is built from Polynomials, Monomials, PVariable etc.
-An equation like 
-<pre>1+2 x^2+3 x y+4 x sin(y)</pre>
-is represented as
-<pre>
-Polynomial([
-  Monomial(2.0,[PVariable(x)],[2])]),
-  Monomial(3.0,[x,y],[1,1]),
-  Monomial(4.0,[x,Function(sin,arg)],[1,1])
-])
-</pre>
-</p>
-
-<p>
-A total ordering of all expressions is used. 
-As the representation is constructed the total ordering of terms is maintained. 
-This helps ensure that polynomials are always in their simplest form
-and also allows comparison of equations.
-</p>
+ * <p>
+ * Uses a complete reworking of the ways equations are represented.
+ * A tree structure is built from Polynomials, Monomials, PVariable etc.
+ * An equation like 
+ * <pre>1+2 x^2+3 x y+4 x sin(y)</pre>
+ * is represented as
+ * <pre>
+ * Polynomial([
+ *   Monomial(2.0,[PVariable(x)],[2])]),
+ *   Monomial(3.0,[x,y],[1,1]),
+ *   Monomial(4.0,[x,Function(sin,arg)],[1,1])
+ * ])
+ * </pre>
+ *
+ * <p>
+ * A total ordering of all expressions is used. 
+ * As the representation is constructed the total ordering of terms is maintained. 
+ * This helps ensure that polynomials are always in their simplest form
+ * and also allows comparison of equations.
+ * </p>
 <p>   
 The following sequence illustrates current ordering. 
 This ordering may change without warning.
@@ -142,7 +141,7 @@ public class PolynomialCreator extends DoNothingVisitor {
 	 * 
 	 * @param node1
 	 * @param node2
-	 * @return -1 if node1<node2, 0 if node1==node2, +1 if node1>node2
+	 * @return -1 if node1&lt;node2, 0 if node1==node2, +1 if node1&gt;node2
 	 * @throws ParseException
 	 */
 	public int compare(Node node1,Node node2) throws ParseException

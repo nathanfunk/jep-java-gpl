@@ -217,11 +217,11 @@ public class Complex
 	}
 
 	/**
-	 * Returns <tt>true</tt> if either the real or imaginary component of this
-	 * <tt>Complex</tt> is an infinite value.
+	 * Returns <code>true</code> if either the real or imaginary component of this
+	 * <code>Complex</code> is an infinite value.
 	 *
 	 * <p>
-	 * @return  <tt>true</tt> if either component of the <tt>Complex</tt> object is infinite; <tt>false</tt>, otherwise.
+	 * @return  <code>true</code> if either component of the <code>Complex</code> object is infinite; <code>false</code>, otherwise.
 	 * <p>
 	 **/
 	public boolean isInfinite() {
@@ -229,11 +229,11 @@ public class Complex
 	}
 
 	/**
-	 * Returns <tt>true</tt> if either the real or imaginary component of this
-	 * <tt>Complex</tt> is a Not-a-Number (<tt>NaN</tt>) value.
+	 * Returns <code>true</code> if either the real or imaginary component of this
+	 * <code>Complex</code> is a Not-a-Number (<code>NaN</code>) value.
 	 *
 	 * <p>
-	 * @return  <tt>true</tt> if either component of the <tt>Complex</tt> object is <tt>NaN</tt>; <tt>false</tt>, otherwise.
+	 * @return  <code>true</code> if either component of the <code>Complex</code> object is <code>NaN</code>; <code>false</code>, otherwise.
 	 * <p>
 	 **/
 	public boolean isNaN() {

@@ -31,7 +31,7 @@ public class PVariable extends AbstractPNode {
 	}
 
 	/**
-	this < arg ---> -1
+	this &lt; arg ---&gt; -1
 	this > arg ---> 1
 	*/
 	public int compareTo(PVariable vf)

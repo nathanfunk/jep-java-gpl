@@ -4,7 +4,7 @@
 package org.lsmp.djep.groupJep.interfaces;
 
 /**
- * Groups which have a total ordering, i.e <, >= make sense.
+ * Groups which have a total ordering, i.e &lt;, &gt;= make sense.
  * @see java.lang.Comparable
  * @author Rich Morris
  * Created on 06-Mar-2004
