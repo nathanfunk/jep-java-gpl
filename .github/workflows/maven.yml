@@ -1,5 +1,4 @@
-# This workflow will build a Java project with Ant
-# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-ant
+# This workflow will build a Java project with Maven
 
 name: Java CI
 
@@ -20,11 +19,11 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 17
-    - name: Build with Ant
-      run: ant -noinput -buildfile build.xml dist
+    - name: Build with Maven
+      run: mvn clean install
       
     - name: Archive production artifacts
       uses: actions/upload-artifact@v4
       with:
-        name: dist
-        path: dist
+        name: target
+        path: target
