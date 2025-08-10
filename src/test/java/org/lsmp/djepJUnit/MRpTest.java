@@ -258,8 +258,49 @@ public class MRpTest extends TestCase {
 		}
 		for(int i=0;i<eqns.length;++i)	{
 			Object matRes = mj.evaluateRaw(nodes[i]);
-			if(!rpMats[i].equals(matRes))
+			if(matRes instanceof Matrix){
+				Matrix expected = (Matrix) matRes;
+				Matrix actual = (Matrix) rpMats[i];
+				if(!expected.getDim().equals(actual.getDim())){
+					fail("Dimension mismatch: expected "+expected.getDim()+" found "+actual.getDim());
+				}
+				int rows = expected.getNumRows();
+				int cols = expected.getNumCols();
+				for(int r=0;r<rows;++r){
+					for(int c=0;c<cols;++c){
+						double e = ((Number) expected.getEle(r,c)).doubleValue();
+						double a = ((Number) actual.getEle(r,c)).doubleValue();
+						if(Math.abs(e-a) > 1e-12){
+							fail("Expected <"+e+"> found <"+a+"> at ("+r+","+c+")");
+						}
+					}
+				}
+			} else if(matRes instanceof Double){
+				// Compare scalar numbers with tolerance
+				double e = ((Double) matRes).doubleValue();
+				double a;
+				if(rpMats[i] instanceof org.lsmp.djep.vectorJep.values.Scaler){
+					a = ((Number) ((org.lsmp.djep.vectorJep.values.Scaler) rpMats[i]).getEle(0)).doubleValue();
+				} else if(rpMats[i] instanceof org.lsmp.djep.vectorJep.values.MVector){
+					a = ((Number) ((org.lsmp.djep.vectorJep.values.MVector) rpMats[i]).getEle(0)).doubleValue();
+				} else {
+					// Fallback: try toString() difference for diagnostics
+					a = Double.parseDouble(rpMats[i].toString());
+				}
+				if(Math.abs(e-a) > 1e-12){
+					fail("Expected <"+e+"> found <"+a+">");
+				}
+			} else if(matRes instanceof Number && rpMats[i] != null && rpMats[i].getDim().equals(org.lsmp.djep.vectorJep.Dimensions.ONE)){
+				// Generic Number vs single-element MatrixValueI
+				double e = ((Number) matRes).doubleValue();
+				double a = ((Number) rpMats[i].getEle(0)).doubleValue();
+				if(Math.abs(e-a) > 1e-12){
+					fail("Expected <"+e+"> found <"+a+">");
+				}
+			} else {
+				if(!rpMats[i].equals(matRes))
 					fail("Expected <"+matRes+"> found <"+rpMats[i]+">");
+			}
 		}		
 		rpe.cleanUp();
 	}

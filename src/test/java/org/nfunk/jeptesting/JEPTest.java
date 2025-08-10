@@ -16,6 +16,8 @@ import junit.framework.TestCase;
 
 import org.nfunk.jep.*;
 import org.nfunk.jep.type.Complex;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 /**
  * This class is designed for testing the validity of JEP evaluations.
@@ -113,12 +115,16 @@ public class JEPTest extends TestCase {
 		Object v1, v2;
 		boolean hasError = false;
 
-		// Load the input file
+		// Load the input file from resources
 		try {
-			reader = new BufferedReader(new FileReader(fileName));
+			InputStream is = getClass().getClassLoader().getResourceAsStream(fileName);
+			if (is == null) {
+				Assert.fail("File \""+fileName+"\" not found in resources");
+				return;
+			}
+			reader = new BufferedReader(new InputStreamReader(is));
 		} catch (Exception e) {
-			Assert.assertTrue(false);
-			println("File \""+fileName+"\" not found");
+			Assert.fail("Error reading file: " + e.getMessage());
 			return;
 		}
 		

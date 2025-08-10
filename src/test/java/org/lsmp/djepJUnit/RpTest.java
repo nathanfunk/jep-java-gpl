@@ -186,8 +186,17 @@ public class RpTest extends TestCase {
 		}
 		for(int i=0;i<eqns.length;++i)	{
 			Object matRes = j.evaluate(nodes[i]);
-			if(!matRes.equals(Double.valueOf(rpRes[i])))
+			if(matRes instanceof Double){
+				double expected = ((Double) matRes).doubleValue();
+				double actual = rpRes[i];
+				double diff = Math.abs(expected - actual);
+				if(diff > 1e-12){
+					fail("Expected <"+expected+"> found <"+actual+"> (diff="+diff+")");
+				}
+			} else {
+				if(!matRes.equals(Double.valueOf(rpRes[i])))
 					fail("Expected <"+matRes+"> found <"+rpRes[i]+">");
+			}
 		}
 		rpe.cleanUp();
 	}

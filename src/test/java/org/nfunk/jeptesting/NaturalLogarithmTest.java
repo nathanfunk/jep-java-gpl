@@ -1,14 +1,14 @@
 package org.nfunk.jeptesting;
 
 import org.nfunk.jep.ParseException;
-import org.nfunk.jep.function.Logarithm;
+import org.nfunk.jep.function.NaturalLogarithm;
 
 import junit.framework.Assert;
 import junit.framework.TestCase;
 
-public class LogarithmTest extends TestCase {
+public class NaturalLogarithmTest extends TestCase {
 
-	LogarithmTest(String name) {
+	public NaturalLogarithmTest(String name) {
 		super(name);
 	}
 
@@ -16,8 +16,8 @@ public class LogarithmTest extends TestCase {
 	 * Test method for 'org.nfunk.jep.function.Logarithm.run(Stack)'
 	 * Tests the return value of log(NaN). This is a test for bug #1177557
 	 */
-	public void testLogarithm() {
-		Logarithm logFunction = new Logarithm();
+	public void testNaturalLogarithm() {
+		NaturalLogarithm logFunction = new NaturalLogarithm();
 		java.util.Stack stack = new java.util.Stack();
 		stack.push(Double.valueOf(Double.NaN));
 		try {
