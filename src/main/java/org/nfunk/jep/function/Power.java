@@ -117,7 +117,7 @@ public class Power extends PostfixMathCommand
 	 * Code adapted from {@link http://mindprod.com/jgloss/power.html} by Patricia Shanahan pats@acm.org
 	 * Almost identical to the method Knuth gives on page 462 of The Art of Computer Programming Volume 2 Seminumerical Algorithms.
 	 * @param x number to be taken to a power.
-	 * @param n power to take x to. 0 <= n <= Integer.MAX_VALUE
+	 * @param n power to take x to. 0 &lt;= n &lt;= Integer.MAX_VALUE
 	 * Negative numbers will be treated as unsigned positives.
  	 * @return x to the power n
 	 * 

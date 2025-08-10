@@ -39,7 +39,7 @@ public class BaseFormat extends NumberFormat {
     /**
      * Create a new base format object 
      * @param base the base of number to use
-     * @throws IllegalArgumentException if base is < 2 or > 36
+     * @throws IllegalArgumentException if base is &lt; 2 or &gt; 36
      */
     public BaseFormat(int base) {
         super();
@@ -51,7 +51,7 @@ public class BaseFormat extends NumberFormat {
      * Create a new base format object 
      * @param base the base of number to use
      * @param prefix prefix to appear before number
-     * @throws IllegalArgumentException if base is < 2 or > 36
+     * @throws IllegalArgumentException if base is &lt; 2 or &gt; 36
      */
     public BaseFormat(int base,String prefix) {
         super();

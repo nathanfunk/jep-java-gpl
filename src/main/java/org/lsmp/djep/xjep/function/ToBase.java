@@ -36,7 +36,7 @@ public class ToBase extends PostfixMathCommand {
     /**
      * Constructor with specified base.
      * @param base the base to use
-     * @throws IllegalArgumentException if base is < 2 or > 36
+     * @throws IllegalArgumentException if base is &lt; 2 or &gt; 36
      */
     public ToBase(int base) {
         if(base < Character.MIN_RADIX || base > Character.MAX_RADIX)
@@ -50,7 +50,7 @@ public class ToBase extends PostfixMathCommand {
      * For example 0x to proceed hexadecimal numbers.
      * @param base the base to use
      * @param prefix the string to prefix numbers with.
-     * @throws IllegalArgumentException if base is < 2 or > 36
+     * @throws IllegalArgumentException if base is &lt; 2 or &gt; 36
      */
     public ToBase(int base,String prefix) {
         if(base < Character.MIN_RADIX || base > Character.MAX_RADIX)
@@ -109,7 +109,7 @@ public class ToBase extends PostfixMathCommand {
      * @param num number to convert
      * @param base base to use
      * @return String representation
-     * @throws IllegalArgumentException if base is < 2 or > 36
+     * @throws IllegalArgumentException if base is &lt; 2 or &gt; 36
      */
     public String toBase(long num,int base) {
         if(base < Character.MIN_RADIX || base > Character.MAX_RADIX)
@@ -125,7 +125,7 @@ public class ToBase extends PostfixMathCommand {
      * @param base base to use
      * @param digits number of digits after decimal place
      * @return String representation
-     * @throws IllegalArgumentException if base is < 2 or > 36
+     * @throws IllegalArgumentException if base is &lt; 2 or &gt; 36
      */
     public String toBase(double val,int base,int digits) {
         if(base < Character.MIN_RADIX || base > Character.MAX_RADIX)

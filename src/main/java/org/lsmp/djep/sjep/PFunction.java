@@ -39,8 +39,8 @@ public class PFunction extends AbstractPNode {
 		return true;
 	}
 	/**
-	this < arg ---> -1
-	this > arg ---> 1
+	this &lt; arg ---&gt; -1
+	this &gt; arg ---&gt; 1
 	*/
 	public int compareTo(PFunction fun)
 	{

@@ -142,7 +142,7 @@ public class PolynomialCreator extends DoNothingVisitor {
 	 * 
 	 * @param node1
 	 * @param node2
-	 * @return -1 if node1<node2, 0 if node1==node2, +1 if node1>node2
+	 * @return -1 if node1&lt;node2, 0 if node1==node2, +1 if node1&gt;node2
 	 * @throws ParseException
 	 */
 	public int compare(Node node1,Node node2) throws ParseException

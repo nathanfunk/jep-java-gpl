@@ -205,14 +205,14 @@ public class Monomial extends AbstractPNode {
 		return true;
 	}
 	/** Compare this to argument.
-	 * x < y
-	 * 2 x < 3 x
-	 * x < x^2
-	 * x^2 < x^3
-	 * x < x y
-	 * TODO x y < x^2
+	 * x &lt; y
+	 * 2 x &lt; 3 x
+	 * x &lt; x^2
+	 * x^2 &lt; x^3
+	 * x &lt; x y
+	 * TODO x y &lt; x^2
 	 * 
-	 * @return this < arg ---> -1,	this > arg ---> 1
+	 * @return this &lt; arg ---> -1,	this > arg ---> 1
 	 */
 
 	public int compareTo(PNodeI node)
