@@ -29,6 +29,8 @@ public class Rank extends PostfixMathCommand implements UnaryOperatorI
 	}
 
 
+	@Override
+	@SuppressWarnings({"rawtypes","unchecked"})
 	public void run(Stack s) throws ParseException
 	{
 		Object o = s.pop();

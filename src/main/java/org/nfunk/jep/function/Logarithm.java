@@ -28,6 +28,8 @@ public class Logarithm extends PostfixMathCommand
 		numberOfParameters = 1;
 	}
 
+	@Override
+	@SuppressWarnings({"rawtypes","unchecked"})
 	public void run(Stack inStack) throws ParseException {
 		checkStack(inStack);// check the stack
 		Object param = inStack.pop();

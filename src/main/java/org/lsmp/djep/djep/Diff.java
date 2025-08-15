@@ -24,6 +24,8 @@ import org.nfunk.jep.function.*;
    * Should never be evaluated!
    * @throws ParseException if called by evaluator.
    */
+	@Override
+	@SuppressWarnings("rawtypes")
 	public void run(Stack inStack)	throws ParseException 
 	{
 		throw new ParseException("Cannot evaluate the diff function. ");

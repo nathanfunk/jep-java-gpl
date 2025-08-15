@@ -133,6 +133,8 @@ public abstract class SumType extends PostfixMathCommand implements CallbackEval
 	/**
 	 * run method. Should not be called.
 	 */
+	@Override
+	@SuppressWarnings("rawtypes")
 	public void run(Stack s) throws ParseException {
 		throw new ParseException(name+": run method called should not normally happen.");
 	}

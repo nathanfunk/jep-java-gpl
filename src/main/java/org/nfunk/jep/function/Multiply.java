@@ -12,6 +12,7 @@ import java.util.*;
 import org.nfunk.jep.*;
 import org.nfunk.jep.type.*;
 
+@SuppressWarnings("rawtypes")
 public class Multiply extends PostfixMathCommand
 {
 	
@@ -19,6 +20,8 @@ public class Multiply extends PostfixMathCommand
 		numberOfParameters = -1;
 	}
 	
+	@Override
+	@SuppressWarnings({"rawtypes","unchecked"})
 	public void run(Stack stack) throws ParseException 
 	{
 		checkStack(stack); // check the stack

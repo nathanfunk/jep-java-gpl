@@ -38,6 +38,8 @@ public class FromBase extends PostfixMathCommand {
         this.prefix = prefix;
     }
 
+    @Override
+    @SuppressWarnings({"rawtypes","unchecked"})
     public void run(Stack s) throws ParseException {
         int nargs = this.curNumberOfParameters;
         if(globalBase == -1 && nargs != 2)

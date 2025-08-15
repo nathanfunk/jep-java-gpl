@@ -54,6 +54,8 @@ public class VList extends org.nfunk.jep.function.List
 		return res;
 	}
 	
+	@Override
+	@SuppressWarnings({"rawtypes","unchecked"})
 	public void run(Stack inStack) throws ParseException 
 	{
 		checkStack(inStack); // check the stack

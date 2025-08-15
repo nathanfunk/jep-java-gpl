@@ -25,6 +25,8 @@ public class MAssign extends Assign implements MatrixSpecialEvaluationI,SpecialP
 	/** The run method should not be called. 
 	 * Use {@link #evaluate} instead.
 	 */	
+	@Override
+	@SuppressWarnings({"rawtypes"})
 	public void run(Stack s) throws ParseException 
 	{
 		throw new ParseException("Eval should not be called by Evaluator"); 

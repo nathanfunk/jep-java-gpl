@@ -31,6 +31,8 @@ public class GMultiply extends PostfixMathCommand {
 	 * Calculates the result of applying the "*" operator to the arguments from
 	 * the stack and pushes it back on the stack.
 	 */
+	@Override
+	@SuppressWarnings({"rawtypes","unchecked"})
 	public void run(Stack stack) throws ParseException {
 		if(group==null) throw new ParseException("Multiply not implemented for this group.");
 		checkStack(stack);// check the stack

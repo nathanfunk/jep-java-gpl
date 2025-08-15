@@ -19,6 +19,8 @@ public class Divide extends PostfixMathCommand
 		numberOfParameters = 2;
 	}
 	
+	@Override
+	@SuppressWarnings({"rawtypes","unchecked"})
 	public void run(Stack inStack)
 		throws ParseException 
 	{

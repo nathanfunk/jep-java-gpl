@@ -78,6 +78,8 @@ public class Eval extends PostfixMathCommand implements CommandVisitorI
 	 * Should not be called by evaluator
 	 * @throws ParseException if run.
 	 */
+	@Override
+	@SuppressWarnings("rawtypes")
 	public void run(Stack s) throws ParseException 
 	{
 		throw new ParseException("Eval should not be called by Evaluator"); 

@@ -1,4 +1,4 @@
-/* @author rich
+﻿/* @author rich
  * Created on 27-Jul-2003
  */
 package org.lsmp.djep.vectorJep.function;
@@ -33,6 +33,8 @@ public class MDivide extends Divide implements BinaryOperatorI {
 	/**
 	 *  need to redo this as the standard jep version assumes commutivity.
 	 */	
+	@Override
+	@SuppressWarnings({"rawtypes","unchecked"})
 	public void run(Stack stack) throws ParseException 
 	{
 		checkStack(stack); // check the stack

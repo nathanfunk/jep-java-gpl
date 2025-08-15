@@ -45,6 +45,7 @@ public class PostfixMathCommand implements PostfixMathCommandI
 	/**
 	 * Check whether the stack is not null, throw a ParseException if it is.
 	 */
+	@SuppressWarnings("rawtypes")
 	protected void checkStack(Stack inStack) throws ParseException {
 		/* Check if stack is null */
 		if (null == inStack) {
@@ -85,6 +86,8 @@ public class PostfixMathCommand implements PostfixMathCommandI
 	 * for evaluating the function. This includes popping off the parameters
 	 * from the stack, and pushing the result back on the stack.
 	 */
+	@Override
+	@SuppressWarnings("rawtypes")
 	public void run(Stack s) throws ParseException {
 		throw new ParseException("run() method of PostfixMathCommand called");
 	}

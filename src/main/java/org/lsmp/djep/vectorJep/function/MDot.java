@@ -1,4 +1,4 @@
-/*****************************************************************************
+﻿/*****************************************************************************
 
 JEP - Java Math Expression Parser 2.24
 	  December 30 2002
@@ -51,6 +51,8 @@ public class MDot extends MMultiply implements BinaryOperatorI
 		return res;
 	}
 
+	@Override
+	@SuppressWarnings({"rawtypes","unchecked"})
 	public void run(Stack stack) throws ParseException 
 	{
 		checkStack(stack); // check the stack

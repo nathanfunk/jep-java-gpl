@@ -65,7 +65,9 @@ public class ToBase extends PostfixMathCommand {
         if(globalBase == -1) { return (n==2||n==3); }
         else				 {return (n==1||n==2); }
 	}
-	public void run(Stack s) throws ParseException {
+    @Override
+    @SuppressWarnings({"rawtypes","unchecked"})
+    public void run(Stack s) throws ParseException {
         int narg = curNumberOfParameters;
         int digits=0;
         int base = 0;

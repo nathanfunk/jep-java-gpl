@@ -1,4 +1,4 @@
-/* @author rich
+﻿/* @author rich
  * Created on 13-Feb-2005
  *
  * See LICENSE.txt for license information.
@@ -24,6 +24,8 @@ public class Id extends PostfixMathCommand
 		this.numberOfParameters = 1;
 	}
 
+	@Override
+	@SuppressWarnings({"rawtypes","unchecked"})
 	public void run(Stack s) throws ParseException
 	{
 		Object obj = s.pop();

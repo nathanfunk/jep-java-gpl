@@ -32,6 +32,8 @@ public class GPower extends PostfixMathCommand {
 	 * Calculates the result of applying the "+" operator to the arguments from
 	 * the stack and pushes it back on the stack.
 	 */
+	@Override
+	@SuppressWarnings({"rawtypes","unchecked"})
 	public void run(Stack stack) throws ParseException {
 		checkStack(stack);// check the stack
 		Object exponant = stack.pop();

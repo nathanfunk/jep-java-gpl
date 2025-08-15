@@ -101,6 +101,8 @@ public class VEle extends PostfixMathCommand implements BinaryOperatorI {
 		return res;
 	}
 	
+	@Override
+	@SuppressWarnings({"rawtypes","unchecked"})
 	public void run(Stack stack) throws ParseException 
 	{
 		checkStack(stack); // check the stack

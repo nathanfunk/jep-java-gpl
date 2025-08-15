@@ -80,6 +80,8 @@ public class MacroFunction extends PostfixMathCommand
 	 * Calculates the value of the expression.
 	 * @throws ParseException if run.
 	 */
+	@Override
+	@SuppressWarnings("rawtypes")
 	public void run(Stack stack) throws ParseException 
 	{
 

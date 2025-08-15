@@ -1,4 +1,4 @@
-/*
+﻿/*
 Created 26-May-2006 - Richard Morris
 */
 package org.nfunk.jep.function;
@@ -59,6 +59,8 @@ public class Ele extends PostfixMathCommand implements LValueI {
 		var.setValue(newVarVal);
 	}
 
+	@Override
+	@SuppressWarnings({"rawtypes","unchecked"})
 	public void run(Stack s) throws ParseException {
 		checkStack(s);// check the stack
 		Object rhs = s.pop();

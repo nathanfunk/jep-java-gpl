@@ -1,4 +1,4 @@
-/* @author rich
+﻿/* @author rich
  * Created on 13-Feb-2005
  *
  * See LICENSE.txt for license information.
@@ -47,6 +47,8 @@ public class GetDiagonal extends PostfixMathCommand implements UnaryOperatorI
 		return res;
 	}
 
+	@Override
+	@SuppressWarnings({"rawtypes","unchecked"})
 	public void run(Stack s) throws ParseException
 	{
 		MatrixValueI obj = (MatrixValueI) s.pop();

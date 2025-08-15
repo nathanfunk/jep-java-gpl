@@ -23,6 +23,7 @@ public interface PostfixMathCommandI
 	 * Run the function on the stack. Pops the arguments from the stack, and
 	 * pushes the result on the top of the stack.
 	 */
+	@SuppressWarnings("rawtypes")
 	public void run(Stack aStack) throws ParseException;
 	
 	/**

@@ -20,6 +20,8 @@ public class Abs extends PostfixMathCommand
 		numberOfParameters = 1;
 	}
 	
+	@Override
+	@SuppressWarnings({"rawtypes","unchecked"})
 	public void run(Stack inStack)
 		throws ParseException 
 	{

@@ -29,6 +29,8 @@ public class Solve extends PostfixMathCommand implements BinaryOperatorI
 	}
 
 
+	@Override
+	@SuppressWarnings({"rawtypes","unchecked"})
 	public void run(Stack s) throws ParseException
 	{
 		Object r = s.pop();

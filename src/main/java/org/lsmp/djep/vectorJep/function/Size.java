@@ -54,6 +54,8 @@ public class Size extends PostfixMathCommand implements UnaryOperatorI
 		return res;
 	}
 
+	@Override
+	@SuppressWarnings({"rawtypes","unchecked"})
 	public void run(Stack s) throws ParseException
 	{
 		Object obj = s.pop();

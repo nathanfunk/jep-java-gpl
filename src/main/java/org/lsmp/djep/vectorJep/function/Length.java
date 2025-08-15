@@ -1,4 +1,4 @@
-/* @author rich
+﻿/* @author rich
  * Created on 13-Feb-2005
  *
  * See LICENSE.txt for license information.
@@ -38,6 +38,8 @@ public class Length extends PostfixMathCommand implements UnaryOperatorI
 		return res;
 	}
 
+	@Override
+	@SuppressWarnings({"rawtypes","unchecked"})
 	public void run(Stack aStack) throws ParseException
 	{
 		Object obj = aStack.pop();

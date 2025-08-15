@@ -48,6 +48,8 @@ public class ElementComparative extends Comparative implements BinaryOperatorI {
 			}
 			return res;
 	}
+	@Override
+	@SuppressWarnings({"rawtypes","unchecked"})
 	public void run(Stack inStack) throws ParseException {
 		Object rhsObj = inStack.pop(); 
 		Object lhsObj = inStack.pop();

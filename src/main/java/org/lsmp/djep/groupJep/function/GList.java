@@ -28,6 +28,8 @@ public class GList extends PostfixMathCommand {
 		this.group = group;
 	}
 
+	@Override
+	@SuppressWarnings({"rawtypes","unchecked"})
 	public void run(Stack stack) throws ParseException {
 		checkStack(stack);// check the stack
 		if(!(group instanceof HasListI))

@@ -57,6 +57,8 @@ public class ExteriorProduct extends PostfixMathCommand implements BinaryOperato
 		
 	}
 
+	@Override
+	@SuppressWarnings({"rawtypes","unchecked"})
 	public void run(Stack inStack)
 		throws ParseException 
 	{

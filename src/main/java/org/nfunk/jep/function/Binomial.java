@@ -1,4 +1,4 @@
-/* @author rich
+﻿/* @author rich
  * Created on 13-Feb-2005
  *
  * See LICENSE.txt for license information.
@@ -68,6 +68,8 @@ public class Binomial extends PostfixMathCommand
 		this.numberOfParameters = 2;
 	}
 
+	@Override
+	@SuppressWarnings({"rawtypes","unchecked"})
 	public void run(Stack s) throws ParseException
 	{
 		Object iObj = s.pop();

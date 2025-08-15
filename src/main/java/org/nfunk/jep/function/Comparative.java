@@ -52,6 +52,8 @@ public class Comparative extends PostfixMathCommand
 		tolerance = 1e-6;
 	}
 	
+	@Override
+	@SuppressWarnings({"rawtypes","unchecked"})
 	public void run(Stack inStack)	throws ParseException 
 	{
 		checkStack(inStack);// check the stack

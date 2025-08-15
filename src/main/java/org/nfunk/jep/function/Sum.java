@@ -1,4 +1,4 @@
-/*****************************************************************************
+﻿/*****************************************************************************
 
  @header@
  @date@
@@ -31,6 +31,8 @@ public class Sum extends PostfixMathCommand {
 	 * Calculates the result of summing up all parameters, which are assumed to
 	 * be of the Double type.
 	 */
+	@Override
+	@SuppressWarnings({"rawtypes","unchecked"})
 	public void run(Stack stack) throws ParseException {
 		checkStack(stack);// check the stack
 

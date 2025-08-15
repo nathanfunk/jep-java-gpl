@@ -1,4 +1,4 @@
-/*****************************************************************************
+﻿/*****************************************************************************
 
 @header@
 @date@
@@ -22,6 +22,8 @@ public class SquareRoot extends PostfixMathCommand
 	/**
 	 * Applies the function to the parameters on the stack.
 	 */
+	@Override
+	@SuppressWarnings({"rawtypes","unchecked"})
 	public void run(Stack inStack) throws ParseException {
 			
 		checkStack(inStack);// check the stack

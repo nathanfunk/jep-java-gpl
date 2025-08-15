@@ -51,6 +51,8 @@ public class VPower extends PostfixMathCommand implements BinaryOperatorI
 		throw new ParseException("Power: both sides must be either 0 dimensional or 3D vectors");
 	}
 	
+	@Override
+	@SuppressWarnings({"rawtypes","unchecked"})
 	public void run(Stack inStack)
 		throws ParseException 
 	{
