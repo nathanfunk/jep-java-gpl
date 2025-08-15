@@ -1,6 +1,7 @@
 Jep Java GPL
 ============
-[![Maven Central](https://img.shields.io/maven-central/v/io.github.nathanfunk/jep.svg)](https://central.sonatype.com/artifact/io.github.nathanfunk/jep)
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.nathanfunk/jep.svg)](https://central.sonatype.com/artifact/io.github.nathanfunk/jep) [![javadoc](https://javadoc.io/badge2/io.github.nathanfunk/jep/javadoc.svg)](https://javadoc.io/doc/io.github.nathanfunk/jep)
+
 The offical Jep - Java Expression Parser GPL release
 
 View the documentation - http://htmlpreview.github.io/?https://github.com/nathanfunk/jep-java-gpl/blob/master/doc/html/index.html
