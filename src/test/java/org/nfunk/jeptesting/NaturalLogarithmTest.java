@@ -6,6 +6,7 @@ import org.nfunk.jep.function.NaturalLogarithm;
 import junit.framework.Assert;
 import junit.framework.TestCase;
 
+@SuppressWarnings({"rawtypes","unchecked"})
 public class NaturalLogarithmTest extends TestCase {
 
 	public NaturalLogarithmTest(String name) {

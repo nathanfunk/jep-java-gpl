@@ -14,6 +14,7 @@ import java.util.*;
  * @author Rich Morris
  * Created on 23-Nov-2003
  */
+@SuppressWarnings({"rawtypes"})
 public class DSymbolTable extends XSymbolTable {
 	private static final long serialVersionUID = 6350706295032274871L;
 

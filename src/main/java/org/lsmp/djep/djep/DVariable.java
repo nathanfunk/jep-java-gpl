@@ -19,6 +19,7 @@ import org.lsmp.djep.xjep.*;
  * @author Rich Morris
  * Created on 26-Oct-2003
  */
+@SuppressWarnings({"rawtypes","unchecked"})
 public class DVariable extends XVariable 
 {
 	protected Hashtable derivatives = new Hashtable();
