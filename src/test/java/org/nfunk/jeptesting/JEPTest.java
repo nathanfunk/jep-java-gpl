@@ -11,8 +11,9 @@ package org.nfunk.jeptesting;
 
 import java.io.*;
 
-import junit.framework.Assert;
-import junit.framework.TestCase;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import org.nfunk.jep.*;
 import org.nfunk.jep.type.Complex;
@@ -28,8 +29,10 @@ import java.io.InputStreamReader;
  * <pre>1+2
  *3.</pre>
  * The expressions '1+2' and '3' are evaluated with JEP and the results compared.
+ * 
+ * This class uses JUnit 5 for testing.
  */
-public class JEPTest extends TestCase {
+public class JEPTest {
 
 	/** The parser */
 	JEP myParser;
@@ -52,15 +55,16 @@ public class JEPTest extends TestCase {
 	}*/
 	
 	/**
-	 * Creates a new JEPTest instance
+	 * Default constructor for JUnit 5
 	 */
-	public JEPTest(String name) {
-		super(name);
+	public JEPTest() {
+		// No need to call super() for Object
 	}
 	
 	/**
-	 * Sets up the parser.
+	 * Sets up the parser - works for JUnit 5
 	 */
+	@BeforeEach
 	public void setUp() {
 		// Set up the parser
 		myParser = new JEP();
@@ -75,12 +79,57 @@ public class JEPTest extends TestCase {
 	/**
 	 * Runs the test.
 	 */
-	public void runTest() {
+	@Test
+	public void testExpressionFile() {
 		String fileName = "JEPTestExpressions.txt";
 		testWithFile(fileName);
-		testGetValue();
-		testGetComplexValue();
-		testOpSetBug();
+	}
+	
+	@Test
+	public void testGetValue() {
+		// Test whether a normal double value is returned correctly
+		myParser.parseExpression("2.1345");
+		Assertions.assertEquals(myParser.getValue(), 2.1345, 0);
+		
+		// Test whether NaN is returned for Complex numbers
+		myParser.parseExpression("i");
+		Assertions.assertTrue(Double.isNaN(myParser.getValue()));
+		
+		// Test whether NaN is returned for String results
+		myParser.parseExpression("\"asdf\"");
+		Assertions.assertTrue(Double.isNaN(myParser.getValue()));
+	}
+	
+	@Test
+	public void testGetComplexValue() {
+		// Test whether a normal double value is returned as a Complex
+		myParser.parseExpression("2.1345");
+		Assertions.assertTrue(new Complex(2.1345, 0).equals(
+							myParser.getComplexValue(), 0));
+		
+		// Test whether (0, 1) is returned for i
+		myParser.parseExpression("i");
+		Complex z = myParser.getComplexValue();
+		Assertions.assertNotNull(z);
+		Assertions.assertEquals(0, z.re());
+		Assertions.assertEquals(1, z.im());
+		
+		// Test whether NaN is returned for String results
+		myParser.parseExpression("\"asdf\"");
+		Assertions.assertTrue(Double.isNaN(myParser.getValue()));
+	}
+	
+	/**
+	 * Backwards compatibility method for old test suite
+	 */
+	public void testParseExpression() {
+		testExpressionFile();
+	}
+	
+	@Test
+	public void testOpSetBug() {
+		JEP j = new JEP(false, true, true, null);
+		Assertions.assertNotNull(j.getOperatorSet());
 	}
 	
 	/**
@@ -101,7 +150,7 @@ public class JEPTest extends TestCase {
 		}
 		
 		// Create an instance of this class and analyse the file
-		JEPTest jt = new JEPTest("JEP Test");
+		JEPTest jt = new JEPTest();
 		jt.setUp();
 		jt.testWithFile(fileName);
 	}
@@ -119,12 +168,12 @@ public class JEPTest extends TestCase {
 		try {
 			InputStream is = getClass().getClassLoader().getResourceAsStream(fileName);
 			if (is == null) {
-				Assert.fail("File \""+fileName+"\" not found in resources");
+				Assertions.fail("File \""+fileName+"\" not found in resources");
 				return;
 			}
 			reader = new BufferedReader(new InputStreamReader(is));
 		} catch (Exception e) {
-			Assert.fail("Error reading file: " + e.getMessage());
+			Assertions.fail("Error reading file: " + e.getMessage());
 			return;
 		}
 		
@@ -234,52 +283,6 @@ public class JEPTest extends TestCase {
 		return param1.equals(param2);
 		
 //		throw new Exception("Unable to compare the values of this type");
-	}
-
-	/**
-	 * Test the getValue() method.
-	 */
-	public void testGetValue() {
-		// Test whether a normal double value is returned correctly
-		myParser.parseExpression("2.1345");
-		Assert.assertEquals(myParser.getValue(), 2.1345, 0);
-		
-		// Test whether NaN is returned for Somplex numbers
-		myParser.parseExpression("i");
-		Assert.assertTrue(Double.isNaN(myParser.getValue()));
-		
-		// Test whether NaN is returned for String results
-		myParser.parseExpression("\"asdf\"");
-		Assert.assertTrue(Double.isNaN(myParser.getValue()));
-	}
-	
-	/**
-	 * Test the getComplexValue() method.
-	 */
-	public void testGetComplexValue() {
-		// Test whether a normal double value is returned as a Complex
-		myParser.parseExpression("2.1345");
-		Assert.assertTrue(new Complex(2.1345, 0).equals(
-							myParser.getComplexValue(), 0));
-		
-		// Test whether (0, 1) is returned for i
-		myParser.parseExpression("i");
-		Complex z = myParser.getComplexValue();
-		Assert.assertTrue(z != null);
-		Assert.assertTrue(z.re() == 0);
-		Assert.assertTrue(z.im() == 1);
-		
-		// Test whether NaN is returned for String results
-		myParser.parseExpression("\"asdf\"");
-		Assert.assertTrue(Double.isNaN(myParser.getValue()));
-	}
-	
-	/**
-	 * Tests the uninitialized OperatorSet bug 1061200
-	 */
-	public void testOpSetBug() {
-		JEP j = new JEP(false, true, true, null);
-		Assert.assertNotNull(j.getOperatorSet());
 	}
 
 	/**

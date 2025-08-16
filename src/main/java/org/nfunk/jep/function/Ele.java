@@ -1,4 +1,4 @@
-﻿/*
+/*
 Created 26-May-2006 - Richard Morris
 */
 package org.nfunk.jep.function;

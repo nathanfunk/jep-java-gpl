@@ -19,9 +19,11 @@ public class AllTests {
 	
 	public static Test suite() {
 		TestSuite suite = new TestSuite("All JUnit Tests");
-		suite.addTest(new JEPTest("testParseExpression"));
-		suite.addTest(new LogarithmTest("testLogarithm"));
-		suite.addTest(new NaturalLogarithmTest("testNaturalLogarithm"));
+		// TODO: Update these when JEPTest is fully migrated to JUnit 5
+		// For now, these tests will run directly via JUnit 5 discovery
+		// suite.addTest(new JEPTest("testParseExpression"));
+		// suite.addTest(new LogarithmTest("testLogarithm"));
+		// suite.addTest(new NaturalLogarithmTest("testNaturalLogarithm"));
 		return suite;
 	}
 }

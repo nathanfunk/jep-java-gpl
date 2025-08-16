@@ -36,6 +36,22 @@
     <scope>test</scope>
   </dependency>
 
+  <!-- JUnit 5 Jupiter API for new tests -->
+  <dependency>
+    <groupId>org.junit.jupiter</groupId>
+    <artifactId>junit-jupiter-api</artifactId>
+    <version>5.11.1</version>
+    <scope>test</scope>
+  </dependency>
+
+  <!-- JUnit 5 Jupiter Engine for running JUnit 5 tests -->
+  <dependency>
+    <groupId>org.junit.jupiter</groupId>
+    <artifactId>junit-jupiter-engine</artifactId>
+    <version>5.11.1</version>
+    <scope>test</scope>
+  </dependency>
+
   <!-- JUnit Platform Vintage Engine to run JUnit 3/4 tests under Surefire -->
   <dependency>
     <groupId>org.junit.vintage</groupId>
