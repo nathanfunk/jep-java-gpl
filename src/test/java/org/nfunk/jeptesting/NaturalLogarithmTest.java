@@ -3,20 +3,17 @@ package org.nfunk.jeptesting;
 import org.nfunk.jep.ParseException;
 import org.nfunk.jep.function.NaturalLogarithm;
 
-import junit.framework.Assert;
-import junit.framework.TestCase;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 @SuppressWarnings({"rawtypes","unchecked"})
-public class NaturalLogarithmTest extends TestCase {
-
-	public NaturalLogarithmTest(String name) {
-		super(name);
-	}
+public class NaturalLogarithmTest {
 
 	/**
 	 * Test method for 'org.nfunk.jep.function.Logarithm.run(Stack)'
 	 * Tests the return value of log(NaN). This is a test for bug #1177557
 	 */
+	@Test
 	public void testNaturalLogarithm() {
 		NaturalLogarithm logFunction = new NaturalLogarithm();
 		java.util.Stack stack = new java.util.Stack();
@@ -24,14 +21,14 @@ public class NaturalLogarithmTest extends TestCase {
 		try {
 			logFunction.run(stack);
 		} catch (ParseException e) {
-			Assert.fail();
+			Assertions.fail();
 		}
 		Object returnValue = stack.pop();
 
 		if (returnValue instanceof Double) {
-			Assert.assertTrue(Double.isNaN(((Double)returnValue).doubleValue()));
+			Assertions.assertTrue(Double.isNaN(((Double)returnValue).doubleValue()));
 		} else {
-			Assert.fail();
+			Assertions.fail();
 		}
 	}
 
