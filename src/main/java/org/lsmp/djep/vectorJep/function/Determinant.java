@@ -1,4 +1,4 @@
-﻿/* @author rich
+/* @author rich
  * Created on 13-Feb-2005
  *
  * See LICENSE.txt for license information.

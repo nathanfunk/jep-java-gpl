@@ -1,4 +1,4 @@
-﻿/* @author rich
+/* @author rich
  * Created on 05-Mar-2004
  */
 package org.lsmp.djep.groupJep.function;

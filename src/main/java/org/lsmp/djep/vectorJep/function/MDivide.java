@@ -1,4 +1,4 @@
-﻿/* @author rich
+/* @author rich
  * Created on 27-Jul-2003
  */
 package org.lsmp.djep.vectorJep.function;
