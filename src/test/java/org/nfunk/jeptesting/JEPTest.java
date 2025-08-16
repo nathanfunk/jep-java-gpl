@@ -15,9 +15,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-// Keep JUnit 4 imports for backward compatibility during migration
-import junit.framework.TestCase;
-
 import org.nfunk.jep.*;
 import org.nfunk.jep.type.Complex;
 import java.io.InputStream;
@@ -33,10 +30,9 @@ import java.io.InputStreamReader;
  *3.</pre>
  * The expressions '1+2' and '3' are evaluated with JEP and the results compared.
  * 
- * This class extends TestCase for backward compatibility but also uses JUnit 5 annotations
- * for new tests during the migration period.
+ * This class uses JUnit 5 for testing.
  */
-public class JEPTest extends TestCase {
+public class JEPTest {
 
 	/** The parser */
 	JEP myParser;
@@ -59,21 +55,14 @@ public class JEPTest extends TestCase {
 	}*/
 	
 	/**
-	 * Creates a new JEPTest instance - for JUnit 4 compatibility
-	 */
-	public JEPTest(String name) {
-		super(name);
-	}
-	
-	/**
 	 * Default constructor for JUnit 5
 	 */
 	public JEPTest() {
-		super();
+		// No need to call super() for Object
 	}
 	
 	/**
-	 * Sets up the parser - works for both JUnit 4 and 5
+	 * Sets up the parser - works for JUnit 5
 	 */
 	@BeforeEach
 	public void setUp() {
@@ -161,7 +150,7 @@ public class JEPTest extends TestCase {
 		}
 		
 		// Create an instance of this class and analyse the file
-		JEPTest jt = new JEPTest("JEP Test");
+		JEPTest jt = new JEPTest();
 		jt.setUp();
 		jt.testWithFile(fileName);
 	}
