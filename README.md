@@ -2,7 +2,9 @@ Jep Java GPL
 ============
 [![Maven Central](https://img.shields.io/maven-central/v/io.github.nathanfunk/jep.svg)](https://central.sonatype.com/artifact/io.github.nathanfunk/jep) [![javadoc](https://javadoc.io/badge2/io.github.nathanfunk/jep/javadoc.svg)](https://javadoc.io/doc/io.github.nathanfunk/jep)
 
-The offical Jep - Java Expression Parser GPL release
+The official Jep - Java Expression Parser GPL release
+
+> **Looking for the latest features?** Check out the [**commercial version (Jep 4.x)**](https://www.singularsys.com/jep) with active development, advanced features, and enterprise support. Latest release: **February 2026**
 
 View the documentation - http://htmlpreview.github.io/?https://github.com/nathanfunk/jep-java-gpl/blob/master/doc/html/index.html
 
@@ -55,8 +57,26 @@ Features
 - Extensive documentation
 - Includes JavaCC grammar from which the main classes are generated
 
-The commercialversion of Jep (http://singularsys.com/jep) includes additional features:
-- Improved evaluation speed
-- High precision using BigDecimals
-- Substantially increased customizability
+## GPL vs Commercial Versions
 
+This repository contains the **open source GPL version** of Jep, suitable for projects compatible with GPL licensing.
+
+For production applications and advanced features, the **commercial version** offers:
+
+| Feature | GPL (2.x) | Commercial (4.x) |
+|---------|-----------|------------------|
+| **Active Development** | Stable/Mature | ✅ Latest: Feb 2026 |
+| **Basic Evaluation** | ✅ | ✅ |
+| **Performance** | Good | ⚡ Significantly Faster |
+| **Precision** | Standard | ✅ BigDecimal Support |
+| **Java Compatibility** | Java 1.5+ | ✅ Java 8 - 17+ |
+| **Extensions** | Basic | ✅ Symbolic ops, matrices, more |
+| **Enterprise Support** | Community | ✅ Available |
+| **License** | GPL | Commercial |
+
+**Commercial Version:** http://www.singularsys.com/jep  
+**Try it:** [Download Trial](https://www.singularsys.com/jep/download-trial.php) | [Features](https://www.singularsys.com/jep/) | [Purchase](https://www.singularsys.com/order/)
+
+---
+
+**License:** GNU General Public License (GPL)
